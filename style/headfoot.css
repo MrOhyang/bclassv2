@@ -1,0 +1,165 @@
+/* Public */
+/* Public */
+body,
+form,
+tr,
+td,
+input,
+textarea,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  text-align: justify;
+}
+div {
+  position: relative;
+}
+img {
+  border: none;
+}
+ul {
+  list-style-type: none;
+}
+em {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+/* Variable */
+/* Variable */
+/* Function Class */
+/* Function Class */
+/* Class */
+/* Code */
+/* top */
+#d_top {
+  height: 30px;
+  background-color: #1087ac;
+}
+#d_top #top {
+  margin: 0 auto;
+  width: 1020px;
+  height: 30px;
+}
+#d_top #top span {
+  margin-left: 20px;
+  display: inline;
+  float: right;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+#d_top #top span a {
+  font-size: 15px;
+  color: #FFF;
+}
+/* nav */
+#d_nav {
+  height: 50px;
+  background-color: #17a6bf;
+}
+#d_nav #nav {
+  margin: 0 auto;
+  width: 1020px;
+  min-height: 50px;
+}
+#d_nav #nav span#s_logo {
+  display: inline;
+  float: left;
+  height: 50px;
+}
+#d_nav #nav span#s_logo a img#img_logo {
+  display: inline;
+  float: left;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+#d_nav #nav span#s_logo h1 {
+  margin-top: 10px;
+  margin-left: 10px;
+  display: inline;
+  float: left;
+  font-size: 26px;
+  color: #FFF;
+}
+#d_nav #nav span#s_logo h2 {
+  margin-top: 22px;
+  margin-left: 10px;
+  display: inline;
+  float: left;
+  font-size: 15px;
+  color: #FFF;
+}
+#d_nav #nav span#s_nav {
+  display: inline;
+  float: right;
+  height: 50px;
+}
+#d_nav #nav span#s_nav ul#ul_nav {
+  height: 50px;
+}
+#d_nav #nav span#s_nav ul#ul_nav li {
+  display: inline;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+}
+#d_nav #nav span#s_nav ul#ul_nav li a {
+  display: block;
+  width: 96px;
+  height: 50px;
+  text-align: center;
+  color: #FFF;
+}
+#d_nav #nav span#s_nav ul#ul_nav li a:hover {
+  background-color: #02B7D3;
+}
+#d_nav #nav span#s_nav ul#ul_nav li.nav_li_active a {
+  background-color: #02B7D3;
+}
+/* footer */
+#f_footer {
+  background-color: #1087AC;
+}
+#f_footer #footer {
+  margin: 0 auto;
+  width: 1020px;
+}
+#f_footer #footer .footer_3fen {
+  display: inline;
+  float: left;
+  padding: 26px 0;
+  width: 33%;
+}
+#f_footer #footer .footer_3fen h1 {
+  padding: 6px 0;
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFF;
+}
+#f_footer #footer .footer_3fen p {
+  line-height: 1.7em;
+  font-size: 14px;
+  color: #FFF;
+}

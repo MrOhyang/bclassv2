@@ -1,0 +1,143 @@
+/* Public */
+@import url(reset.less);
+
+/* Variable */
+@import url(variable.less);
+
+/* Function Class */
+@import url(functioncss.less);
+
+/* Class */
+@import url(publicclass.less);
+.d_cont_block{
+	.d_cont_block_title{
+		span.d_cont_block_san{
+			border-top: 6px #FFF solid;
+			border-right: 6px #FFF solid;
+			border-bottom: 6px #04B1CC solid;
+			border-left: 6px #04B1CC solid;
+			box-shadow: 3px -3px 0px 3px #FFF;
+		}
+	}
+	.d_cont_block_body{
+		border-left: 1px #DDD solid;
+	}
+}
+
+/* Code */
+*{
+	font-family: "Microsoft YaHei";
+	font-size: 16px;
+}
+body{
+	background-color: @COLOR_BODY;
+}
+
+/* news_content */
+#news_content{
+	.center();
+	margin-bottom: 30px;
+	padding-top: 30px;
+	padding-bottom: 6px;
+	width: @WEBWIDTH;
+	background-color: #FFF;
+	box-shadow: 1px 1px 3px 0 #AAA;
+	#cont_left{
+		.float(left);
+		margin-left: 24px;
+		width: 220px;
+		#news_func{
+			.d_cont_block_title{
+				width: 222px;
+			}
+			.d_cont_block_body{
+				ul#ul_newsfunc{
+					display: none;
+					padding-top: 3px;
+					li{
+						margin-left: 3px;
+						margin-bottom: 3px;
+						width: 214px;
+						height: 40px;
+						line-height: 40px;
+						text-indent: 2em;
+						/*background-color: #DCF2F5;*/
+						cursor: pointer;
+						a{
+							color: #222;
+						}
+					}
+					li:hover{
+						background-color: #DCF2F5;
+					}
+				}
+				#slide_button{
+					position: relative;
+					height: 20px;
+					border-top: 1px #E8E8E8 solid;
+					background-color: #F2FDFF;
+					cursor: pointer;
+					em{
+						position: absolute;
+						top: 8px;
+						left: 50%;
+						margin-left: -6px;
+						height: 0;
+						line-height: 0;
+						border-top: 6px #04B1CC solid;
+						border-right: 6px transparent solid;
+						border-bottom: 6px transparent solid;
+						border-left: 6px transparent solid;
+					}
+					em.active{
+						top: 1px;
+						border-top: 6px transparent solid;
+						border-bottom: 6px #04B1CC solid;
+					}
+				}
+			}
+		}
+	}
+	#cont_right{
+		.float(left);
+		margin-left: 12px;
+		width: 740px;
+		min-height: 100px;
+		#news_maincont{
+			.d_cont_block_body{
+				ul#ul_newslist{
+					margin-left: 14px;
+					padding: 8px 0;
+					width: 740-14*2px;
+					li{
+						height: 26px;
+						line-height: 26px;
+						margin-bottom: 6px;
+						text-indent: 8px;
+						background-color: #F6F6FF;
+						a{
+							font-size: 15px;
+							color: #333;
+							em{
+								.float(right);
+								margin-right: 10px;
+								font-size: 14px;
+								color: #BBB;
+							}
+						}
+					}
+					li:hover{
+						background-color: #DFD;
+						cursor: pointer;
+						a{
+							color: #34F;
+							em{
+								color: #34F;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

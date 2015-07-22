@@ -1,0 +1,408 @@
+/* Public */
+/* Public */
+body,
+form,
+tr,
+td,
+input,
+textarea,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  text-align: justify;
+}
+div {
+  position: relative;
+}
+img {
+  border: none;
+}
+ul {
+  list-style-type: none;
+}
+em {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+/* Variable */
+/* Variable */
+/* Function Class */
+/* Function Class */
+/* Class */
+/* Class */
+.d_clear {
+  clear: both;
+}
+.d_cont_block {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 1px 1px 3px 0 #AAA;
+}
+.d_cont_block .d_cont_block_title {
+  width: 100%;
+  height: 40px;
+  background-color: #04B1CC;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_num {
+  position: relative;
+  display: inline;
+  float: left;
+  margin-left: 14px;
+  padding: 0 8px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #F2F2F2;
+  font-family: "Bauhaus 93";
+  font-size: 28px;
+  color: #00789B;
+  z-index: 100;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_num em {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  line-height: 0;
+  border-left: 10px #F2F2F2 solid;
+  border-top: 20px #04B1CC solid;
+  border-bottom: 20px #04B1CC solid;
+  z-index: 200;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_name {
+  display: inline;
+  float: left;
+  margin-left: 20px;
+  line-height: 40px;
+  color: #FFF;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_san {
+  display: inline;
+  float: right;
+  top: 0;
+  right: 0;
+  height: 0;
+  line-height: 0;
+  background-color: blue;
+  border-top: 6px #F0EFEF solid;
+  border-right: 6px #F0EFEF solid;
+  border-bottom: 6px #04B1CC solid;
+  border-left: 6px #04B1CC solid;
+  box-shadow: 3px -3px 0px 3px #f0efef;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_more {
+  position: relative;
+  display: inline;
+  float: right;
+  margin-right: 1px;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFF;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_more a {
+  display: block;
+  width: 20px;
+  text-align: center;
+  color: #FFF;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_more a:hover {
+  position: relative;
+  top: -1px;
+  left: -1px;
+  color: green;
+}
+.d_cont_block .d_cont_block_body {
+  width: 100%;
+  background-color: #FFF;
+}
+/* input tag */
+.myinput {
+  padding: 2px 6px;
+  font-size: 14px;
+  border: 1px #D0F0D0 solid;
+}
+.mybutton {
+  padding: 4px 24px;
+  font-size: 14px;
+  background-color: #5ECFD5;
+  border: 1px #47C3D6 solid;
+  border-radius: 2px;
+  color: #FFF;
+  cursor: pointer;
+}
+.mybutton:hover {
+  background-color: #6BDCF2;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_san {
+  border-top: 6px #DAF0FD solid;
+  border-right: 6px #DAF0FD solid;
+  border-bottom: 6px #04B1CC solid;
+  border-left: 6px #04B1CC solid;
+  box-shadow: 5px 0px 0px 0px #DAF0FD;
+}
+.d_cont_block .d_cont_block_body {
+  border-left: 1px #DDD solid;
+}
+/* Code */
+* {
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+}
+body {
+  background-color: #f0efef;
+}
+/* community_content */
+#df_community_content {
+  width: 100%;
+  background-image: url("../images/background.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: #FFF;
+}
+#df_community_content #community_content {
+  margin: 0 auto;
+  width: 1020px;
+  padding-bottom: 10px;
+  /*background-color: red;*/
+}
+#df_community_content #community_content #cont_top {
+  display: inline;
+  float: left;
+  margin-top: 44px;
+  margin-bottom: 20px;
+  width: 99.8%;
+  /*background-color: #345;*/
+}
+#df_community_content #community_content #cont_top span {
+  display: inline-block;
+  /*background-color: yellow;*/
+}
+#df_community_content #community_content #cont_top span img {
+  margin: 0;
+  padding: 3px;
+  width: 100px;
+  height: 100px;
+  border: 1px #DDD solid;
+  background-color: #FFF;
+}
+#df_community_content #community_content #cont_left {
+  display: inline;
+  float: left;
+  width: 180px;
+  min-height: 100px;
+}
+#df_community_content #community_content #cont_left ul.ul_cont_left_block {
+  margin-bottom: 20px;
+  padding: 3px 0;
+  width: 178px;
+  border: 1px #DDD solid;
+  background-color: #FFF;
+}
+#df_community_content #community_content #cont_left ul.ul_cont_left_block li {
+  margin-left: 3px;
+  margin-bottom: 1px;
+  width: 172px;
+  height: 34px;
+  line-height: 34px;
+  text-indent: 2em;
+  cursor: pointer;
+  /*background-color: #DCF2F5;*/
+}
+#df_community_content #community_content #cont_left ul.ul_cont_left_block li a {
+  display: block;
+  font-size: 14px;
+  color: #000;
+}
+#df_community_content #community_content #cont_left ul.ul_cont_left_block li.active {
+  background-color: #DCF2F5;
+}
+#df_community_content #community_content #cont_left ul.ul_cont_left_block li.active a {
+  font-weight: bold;
+}
+#df_community_content #community_content #cont_left ul.ul_cont_left_block li:hover {
+  background-color: #DCF2F5;
+}
+#df_community_content #community_content #cont_middle {
+  display: inline;
+  float: left;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 586px;
+  min-height: 100px;
+  /*background-color: yellow;*/
+}
+#df_community_content #community_content #cont_middle #d_say .d_cont_block_body {
+  min-height: 80px;
+  cursor: text;
+}
+#df_community_content #community_content #cont_middle #d_say .d_cont_block_body p {
+  padding-top: 3px;
+  padding-left: 5px;
+  font-size: 15px;
+  color: #AAA;
+}
+#df_community_content #community_content #cont_middle #d_commu {
+  box-shadow: none;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_title {
+  box-shadow: 1px 1px 3px 0 #AAA;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body {
+  padding-top: 8px;
+  margin-bottom: 20px;
+  width: 584px;
+  border: 1px #DDD solid;
+  /* 一个 block 动态的 face和内容 */
+  /* 一个 block 动态的 相关操作 */
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_main {
+  margin-left: 8px;
+  width: 566px;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_main .cont_main_face {
+  height: 50px;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_main .cont_main_face .d_cont_faceimg {
+  display: inline;
+  float: left;
+  height: 50px;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_main .cont_main_face .d_cont_faceimg a {
+  height: 50px;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_main .cont_main_face .d_cont_faceimg a img {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_main .cont_main_face h5 {
+  display: inline;
+  float: left;
+  margin-top: 3px;
+  margin-left: 6px;
+  width: 80%;
+  font-size: 14px;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_main .cont_main_face h5 a {
+  color: #333;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_main .cont_main_face h5 a:hover {
+  color: #45F;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_main .cont_main_face h6 {
+  display: inline;
+  float: left;
+  margin-top: 4px;
+  margin-left: 6px;
+  width: 80%;
+  font-size: 13px;
+  color: #BBB;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_main .cont_main_cont {
+  margin: 10px 0;
+  font-size: 15px;
+  background-color: blue;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func {
+  padding-bottom: 8px;
+  background-color: #F2FDFF;
+  border-top: 1px #DDEDF0 solid;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_contfunc {
+  margin-top: 4px;
+  margin-left: 8px;
+  width: 568px;
+  height: 30px;
+  /*background-color: red;*/
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_contfunc li {
+  position: relative;
+  display: inline;
+  float: left;
+  margin-right: 6px;
+  padding: 4px 10px 4px 32px;
+  font-size: 13px;
+  border: 1px #F2FDFF solid;
+  cursor: pointer;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_contfunc li em {
+  position: absolute;
+  top: 6px;
+  left: 9px;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_contfunc li em.em_contfunc_comments {
+  width: 14px;
+  height: 15px;
+  background-image: url(../images/icon/comments.png);
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_contfunc li em.em_contfunc_forward {
+  width: 16px;
+  height: 13px;
+  background-image: url(../images/icon/forward.png);
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_contfunc li em.em_contfunc_zan {
+  width: 15px;
+  height: 15px;
+  background-image: url(../images/icon/zan.png);
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_contfunc li em.em_contfunc_collection {
+  width: 14px;
+  height: 15px;
+  background-image: url(../images/icon/comments.png);
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_contfunc li:hover {
+  background-color: #FFF;
+  border: 1px #DDEDF0 solid;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_contfunc b {
+  position: relative;
+  display: inline;
+  float: left;
+  margin-top: 8px;
+  margin-right: 6px;
+  width: 1px;
+  height: 14px;
+  background-color: #E0E0E0;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func .cont_say {
+  margin-top: 10px;
+  margin-left: 8px;
+  width: 568px;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func .cont_say form input.cont_say_cont {
+  width: 554px;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func .cont_say form input.cont_say_submit {
+  display: inline;
+  float: right;
+  margin-top: 8px;
+}
+#df_community_content #community_content #cont_right {
+  display: inline;
+  float: left;
+  width: 210px;
+  min-height: 100px;
+  background-color: blue;
+}

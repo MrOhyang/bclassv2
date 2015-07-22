@@ -1,0 +1,243 @@
+/* Public */
+@import url(reset.less);
+
+/* Variable */
+@import url(variable.less);
+
+/* Function Class */
+@import url(functioncss.less);
+
+/* Class */
+@import url(publicclass.less);
+
+/* Code */
+*{
+	font-family: "Microsoft YaHei";
+	font-size: 16px;
+}
+body{
+	background-color: @COLOR_BODY;
+}
+
+/* focus */
+#d_focus{
+	height: 290px;
+	background-image: url(../images/f_focus.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	#focus{
+		position: relative;
+		.center();
+		width: @WEBWIDTH;
+		height: 290px;
+		background-color: #FFF;
+		ul#ul_focus{
+			overflow: hidden;
+			position: relative;
+			width: @WEBWIDTH;
+			height: 290px;
+			li{
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+				width: @WEBWIDTH;
+				height: 290px;
+				img{
+					width: @WEBWIDTH;
+					height: 290px;
+				}
+			}
+		}
+		#focus_left_b,#focus_right_b{
+			position: absolute;
+			display: block;
+			width: 20px;
+			height: 28px;
+			top: 130px;
+			cursor: pointer;
+			z-index: 300;
+		}
+		#focus_left_b{
+			left: -34px;
+			background-image: url(../images/left.png);
+			background-position: left;
+		}
+		#focus_right_b{
+			right: -34px;
+			background-image: url(../images/right.png);
+			background-position: right;
+		}
+		#focus_left_b:hover{
+			left: -44px;
+			width: 30px;
+		}
+		#focus_right_b:hover{
+			right: -44px;
+			width: 30px;
+		}
+	}
+}
+
+/* content */
+#d_content{
+	#content{
+		.center();
+		padding-top: 20px;
+		width: @WEBWIDTH;
+		#cont_left{
+			.float(left);
+			width: 764px;
+			#dc_info{
+				position: relative;
+				margin-bottom: 20px;
+				padding: 22px 26px;
+				width: 712px;
+				background-color: #04B1CC;
+				img{
+					height: 25px;
+				}
+				h3{
+					margin-top: 10px;
+					text-indent: 2em;
+					font-size: 16px;
+					line-height: 22px;
+					color: #FFF;
+				}
+				h4{
+					position: absolute;
+					top: 25px;
+					left: 134px;
+					font-size: 18px;
+					font-weight: bold;
+					color: #FFF;
+				}
+			}
+			#d_news{
+				.d_cont_block_body{
+					#d_news_focus{
+						.float(left);
+						margin: 8px;
+						width: 480px;
+						height: 306px;
+						img{
+							width: 480px;
+							height: 306px;
+						}
+					}
+					#d_news_list{
+						.float(left);
+						margin-top: 8px;
+						margin-left: 4px;
+						width: 254-2px;
+						height: 304px;
+						border: 1px #DDD solid;
+						#ul_news_list{
+							li{
+								overflow: hidden;
+								padding: 0px 0 0px 10px;
+								width: 240px;
+								white-space: nowrap;
+								text-overflow: ellipsis;
+								a{
+									line-height: 1.55em;
+									font-size: 15px;
+									color: #555;
+									b{
+										padding-right: 6px;
+										font-size: 14px;
+										font-weight: normal;
+										color: #BBB;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			#d_project{
+				.d_cont_block_body{
+					ul#ul_project{
+						padding: 7px;
+						padding-right: 0;
+						li{
+							.float(left);
+							margin-right: 6px;
+							padding: 8px;
+							border: 1px #DDD solid;
+							a{
+								img{
+								}
+							}
+							h4{
+								padding-top: 8px;
+								padding-bottom: 6px;
+								a{
+									font-size: 20px;
+									color: #777;
+								}
+								a:hover{
+									color: #44F;
+								}
+							}
+							h5{
+								padding: 3px 0;
+								font-size: 14px;
+								a{
+									font-size: 14px;
+									color: #11E;
+								}
+							}
+							h6{
+								padding: 3px 0;
+								font-size: 14px;
+								color: #888;
+								b{
+									font-weight: normal;
+									font-size: 14px;
+									color: red;
+								}
+							}
+							h1{
+								text-align: right;
+								a{
+									vertical-align: bottom;
+									img{
+										margin-left: 10px;
+										height: 34px;
+										border-radius: 4px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		#cont_right{
+			.float(right);
+			width: 240px;
+			#d_today{
+				.d_cont_block_body{
+					h1{
+						padding-top: 18px;
+						padding-left: 8px;
+						font-size: 14px;
+						color: #F66;
+					}
+					h2{
+						padding: 6px 8px 18px 8px;
+						line-height: 1.3em;
+						font-size: 15px;
+					}
+				}
+			}
+			#d_wallspeak{
+				.d_cont_block_body{
+					ul#ul_wall{
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,102 @@
+@import url(functioncss.less);
+/* Class */
+
+.d_clear{ clear: both; }
+
+.d_cont_block{
+	position: relative;
+	margin-bottom: 20px;
+	width: 100%;
+	box-shadow: 1px 1px 3px 0 #AAA;
+	.d_cont_block_title{
+		width: 100%;
+		height: 40px;
+		background-color: #04B1CC;
+		span.d_cont_block_num{
+			position: relative;
+			.float(left);
+			margin-left: 14px;
+			padding: 0 8px;
+			height: 40px;
+			line-height: 40px;
+			background-color: #F2F2F2;
+			font-family: "Bauhaus 93";
+			font-size: 28px;
+			color: #00789B;
+			z-index: 100;
+			em{
+				position: absolute;
+				top: 0;
+				right: -10px;
+				line-height: 0;
+				border-left: 10px #F2F2F2 solid;
+				border-top: 20px #04B1CC solid;
+				border-bottom: 20px #04B1CC solid;
+				z-index: 200;
+			}
+		}
+		span.d_cont_block_name{
+			.float(left);
+			margin-left: 20px;
+			line-height: 40px;
+			color: #FFF;
+		}
+		span.d_cont_block_san{
+			.float(right);
+			top: 0;
+			right: 0;
+			height: 0;
+			line-height: 0;
+			background-color: blue;
+			border-top: 6px #F0EFEF solid;
+			border-right: 6px #F0EFEF solid;
+			border-bottom: 6px #04B1CC solid;
+			border-left: 6px #04B1CC solid;
+			box-shadow: 3px -3px 0px 3px #F0EFEF;
+		}
+		span.d_cont_block_more{
+			position: relative;
+			.float(right);
+			margin-right: 1px;
+			line-height: 40px;
+			font-size: 18px;
+			font-weight: bold;
+			color: #FFF;
+			a{
+				display: block;
+				width: 20px;
+				text-align: center;
+				color: #FFF;
+			}
+			a:hover{
+				position: relative;
+				top: -1px;
+				left: -1px;
+				color: green;
+			}
+		}
+	}
+	.d_cont_block_body{
+		width: 100%;
+		background-color: #FFF;
+	}
+}
+
+/* input tag */
+.myinput{
+	padding: 2px 6px;
+	font-size: 14px;
+	border: 1px #D0F0D0 solid;
+}
+.mybutton{
+	padding: 4px 24px;
+	font-size: 14px;
+	background-color: #5ECFD5;
+	border: 1px #47C3D6 solid;
+	border-radius: 2px;
+	color: #FFF;
+	cursor: pointer;
+}
+.mybutton:hover{
+	background-color: #6BDCF2;
+}
