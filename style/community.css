@@ -257,11 +257,20 @@ body {
   min-height: 80px;
   cursor: text;
 }
-#df_community_content #community_content #cont_middle #d_say .d_cont_block_body p {
+#df_community_content #community_content #cont_middle #d_say .d_cont_block_body p#say_p {
   padding-top: 3px;
   padding-left: 5px;
   font-size: 15px;
   color: #AAA;
+}
+#df_community_content #community_content #cont_middle #d_say #d_say_container {
+  padding: 8px;
+  padding-right: 0;
+  width: 560px;
+  min-height: 200px;
+}
+#df_community_content #community_content #cont_middle #d_say #d_say_container * {
+  font-size: 13px;
 }
 #df_community_content #community_content #cont_middle #d_commu {
   box-shadow: none;

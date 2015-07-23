@@ -24,6 +24,10 @@
 
 <!-- js -->
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<!-- ueditor 配置文件 -->
+<script type="text/javascript" src="js/ueditor/ueditor.config.js"></script>
+<!-- ueditor 编辑器源码文件 -->
+<script type="text/javascript" src="js/ueditor/ueditor.all.min.js"></script>
 <script type="text/javascript" src="js/myjs.js"></script>
 <script type="text/javascript" src="js/community.js"></script>
 
@@ -75,6 +79,7 @@
 			<ul class="ul_cont_left_block">
 				<li><a href="http://wgy.njau.edu.cn">英语学习中心</a></li>
 				<li><a href="http://www.zhihu.com/">知乎</a></li>
+				<li><a href="http://segmentfault.com/">SegmentFault</a></li>
 				<li><a href="http://stackoverflow.com/">StackOverFlow</a></li>
 				<li><a href="https://github.com/">GitHub</a></li>
 			</ul>
@@ -88,7 +93,8 @@
 					<span class="d_cont_block_more"><a href="#"></a></span>
 				</div>
 				<div class="d_cont_block_body">
-					<p>说点什么吧..</p>
+					<p id="say_p">说点什么吧..</p>
+					<!-- <div id="d_say_container"></div> -->
 				</div>
 			</div>
 			<div id="d_commu" class="d_cont_block">
