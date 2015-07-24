@@ -1,0 +1,186 @@
+/* Public */
+/* Public */
+body,
+form,
+tr,
+td,
+input,
+textarea,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  text-align: justify;
+}
+div {
+  position: relative;
+}
+img {
+  border: none;
+}
+ul {
+  list-style-type: none;
+}
+em {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+/* Variable */
+/* Variable */
+/* Function Class */
+/* Function Class */
+/* Class */
+/* Class */
+.d_clear {
+  clear: both;
+}
+.d_cont_block {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 1px 1px 3px 0 #AAA;
+}
+.d_cont_block .d_cont_block_title {
+  width: 100%;
+  height: 40px;
+  background-color: #04B1CC;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_num {
+  position: relative;
+  display: inline;
+  float: left;
+  margin-left: 14px;
+  padding: 0 8px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #F2F2F2;
+  font-family: "Bauhaus 93";
+  font-size: 28px;
+  color: #00789B;
+  z-index: 100;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_num em {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  line-height: 0;
+  border-left: 10px #F2F2F2 solid;
+  border-top: 20px #04B1CC solid;
+  border-bottom: 20px #04B1CC solid;
+  z-index: 200;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_name {
+  display: inline;
+  float: left;
+  margin-left: 20px;
+  line-height: 40px;
+  color: #FFF;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_san {
+  display: inline;
+  float: right;
+  top: 0;
+  right: 0;
+  height: 0;
+  line-height: 0;
+  background-color: blue;
+  border-top: 6px #F0EFEF solid;
+  border-right: 6px #F0EFEF solid;
+  border-bottom: 6px #04B1CC solid;
+  border-left: 6px #04B1CC solid;
+  box-shadow: 3px -3px 0px 3px #f0efef;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_more {
+  position: relative;
+  display: inline;
+  float: right;
+  margin-right: 1px;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFF;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_more a {
+  display: block;
+  width: 20px;
+  text-align: center;
+  color: #FFF;
+}
+.d_cont_block .d_cont_block_title span.d_cont_block_more a:hover {
+  position: relative;
+  top: -1px;
+  left: -1px;
+  color: green;
+}
+.d_cont_block .d_cont_block_body {
+  width: 100%;
+  background-color: #FFF;
+}
+/* input tag */
+.myinput {
+  padding: 2px 6px;
+  font-size: 14px;
+  border: 1px #D0F0D0 solid;
+}
+.mybutton {
+  padding: 4px 24px;
+  font-size: 14px;
+  background-color: #5ECFD5;
+  border: 1px #47C3D6 solid;
+  border-radius: 2px;
+  color: #FFF;
+  cursor: pointer;
+}
+.mybutton:hover {
+  background-color: #6BDCF2;
+}
+/* Code */
+* {
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+}
+body {
+  background-color: #f0efef;
+}
+/* wall_content */
+#wall_content {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1020px;
+  background-color: green;
+}
+#wall_content ul.wall_col {
+  display: inline;
+  float: left;
+  margin-right: 18px;
+  width: 240px;
+  min-height: 20px;
+  background-color: yellow;
+}
+#wall_content ul.wall_col li {
+  margin-bottom: 20px;
+  min-height: 10px;
+  background-color: #3F4;
+}

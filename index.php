@@ -10,12 +10,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>卓越班</title>
-<?php 
+<!-- <?php 
 // $userAgent = strtolower($_SERVER["HTTP_USER_AGENT"]);
 // if( @ereg("msie 7",$userAgent) || @ereg("msie 6",$userAgent) ){
 	
 // }
-?>
+?> -->
 
 <!-- css -->
 <link rel="stylesheet" type="text/css" href="style/headfoot.css">
@@ -54,7 +54,7 @@
 				<li><a href="community.php">交流社区</a></li>
 				<li><a href="#">问卷调查</a></li>
 				<li><a href="#">事件历史</a></li>
-				<li><a href="#">留言墙</a></li>
+				<li><a href="wall.php">留言墙</a></li>
 			</ul>
 		</span>
 	</div>
@@ -94,11 +94,19 @@
 					</div>
 					<div id="d_news_list">
 						<ul id="ul_news_list">
-							<?php $i=0;while($i++<13){ ?>
-
 							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
-							<?php } ?>
-
+							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
+							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
+							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
+							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
+							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
+							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
+							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
+							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
+							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
+							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
+							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
+							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
 						</ul>
 					</div>
 					<div class="d_clear"></div>
@@ -170,13 +178,6 @@
 				</div>
 				<div class="d_cont_block_body">
 					<ul id="ul_wall">
-						<?php $i=1;while($i++<3){ ?>
-
-						<li>
-							
-						</li>
-						<?php } ?>
-
 					</ul>
 				</div>
 			</div>

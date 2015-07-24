@@ -25,9 +25,9 @@
 <!-- js -->
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 <!-- ueditor 配置文件 -->
-<script type="text/javascript" src="js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="ueditor/ueditor.config.js"></script>
 <!-- ueditor 编辑器源码文件 -->
-<script type="text/javascript" src="js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="ueditor/ueditor.all.min.js"></script>
 <script type="text/javascript" src="js/myjs.js"></script>
 <script type="text/javascript" src="js/community.js"></script>
 
@@ -58,7 +58,7 @@
 				<li class="nav_li_active"><a href="community.php">交流社区</a></li>
 				<li><a href="#">问卷调查</a></li>
 				<li><a href="#">事件历史</a></li>
-				<li><a href="#">留言墙</a></li>
+				<li><a href="wall.php">留言墙</a></li>
 			</ul>
 		</span>
 	</div>
@@ -77,11 +77,11 @@
 				<li><a href="#">与我相关</a></li>
 			</ul>
 			<ul class="ul_cont_left_block">
-				<li><a href="http://wgy.njau.edu.cn">英语学习中心</a></li>
-				<li><a href="http://www.zhihu.com/">知乎</a></li>
-				<li><a href="http://segmentfault.com/">SegmentFault</a></li>
-				<li><a href="http://stackoverflow.com/">StackOverFlow</a></li>
-				<li><a href="https://github.com/">GitHub</a></li>
+				<li><a href="http://wgy.njau.edu.cn" target="_blank">英语学习中心</a></li>
+				<li><a href="http://www.zhihu.com/" target="_blank">知乎</a></li>
+				<li><a href="http://segmentfault.com/" target="_blank">SegmentFault</a></li>
+				<li><a href="http://stackoverflow.com/" target="_blank">StackOverFlow</a></li>
+				<li><a href="https://github.com/" target="_blank">GitHub</a></li>
 			</ul>
 		</div>
 		<div id="cont_middle">
@@ -94,7 +94,7 @@
 				</div>
 				<div class="d_cont_block_body">
 					<p id="say_p">说点什么吧..</p>
-					<!-- <div id="d_say_container"></div> -->
+					<div id="d_say_container"></div>
 				</div>
 			</div>
 			<div id="d_commu" class="d_cont_block">
@@ -104,7 +104,55 @@
 					<span class="d_cont_block_san"></span>
 					<span class="d_cont_block_more"><a href="#"></a></span>
 				</div>
+				<!-- 失遇 -->
+				<div class="d_cont_block_body">
+					<div class="cont_main">
+						<div class="cont_main_face">
+							<div class="d_cont_faceimg"><a href="#"><img src="images/face/face_shiyu.png"></a></div>
+							<h5><a href="#">矢遇@</a></h5>
+							<h6>14:22 浏览了(108)</h6>
+						</div>
+						<div class="cont_main_cont">
+							<p>神器拍出来的效果就是不一样</p>
+							<p><img src="images/topic/3.png"></p>
+						</div>
+					</div>
+					<div class="cont_func">
+						<ul class="ul_contfunc">
+							<li><em class="em_contfunc_comments"></em>评论(4)</li><b></b>
+							<li><em class="em_contfunc_forward"></em>转发</li><b></b>
+							<li><em class="em_contfunc_zan"></em>赞(12)</li><b></b>
+							<li><em class="em_contfunc_collection"></em>收藏</li>
+						</ul>
+						<ul class="ul_comments">
+							<li class="li_commu_yuan">
+								<span class="sleft"><a href="#"><img src="images/face/face_Iam.png"></a></span>
+								<span class="sright">
+									<h3><a href="#">I am</a> : 买买买</h3>
+									<h4>7月23号 14:55<em class="em_comments"></em></h4>
+								</span>
+								<div class="d_clear"></div>
+							</li>
+							<li class="li_commu_hui">
+								<span class="sleft"><a href="#"><img src="images/face/face_shiyu.png"></a></span>
+								<span class="sright">
+									<h3><a href="#">矢遇@</a> 回复 <a href="#">I am</a> : 其实不用神器也是一样哦~</h3>
+									<h4>7月23号 14:55<em class="em_comments"></em></h4>
+								</span>
+								<div class="d_clear"></div>
+							</li>
+						</ul>
+						<div class="cont_say">
+							<form name="" method="post" action="">
+								<input class="myinput cont_say_cont" type="text">
+								<!-- <input class="mybutton cont_say_submit" type="submit" value="发表"> -->
+								<div class="d_clear"></div>
+							</form>
+						</div>
+					</div>
+				</div>
 				<?php $i=0;while($i++<3){ ?>
+				<!-- 循环显示 动态 block -->
 				<div class="d_cont_block_body">
 					<div class="cont_main">
 						<div class="cont_main_face">
@@ -113,7 +161,8 @@
 							<h6>16:48 浏览了</h6>
 						</div>
 						<div class="cont_main_cont">
-							比如说
+							<p>比如说</p>
+							<p><img src="images/topic/2.png"></p>
 						</div>
 					</div>
 					<div class="cont_func">
@@ -122,6 +171,42 @@
 							<li><em class="em_contfunc_forward"></em>转发</li><b></b>
 							<li><em class="em_contfunc_zan"></em>赞</li><b></b>
 							<li><em class="em_contfunc_collection"></em>收藏</li>
+						</ul>
+						<ul class="ul_comments">
+							<?php $j=0;while($j++<1){ ?>
+							<li class="li_commu_yuan">
+								<span class="sleft"><a href="#"><img src="images/face/face_Iam.png"></a></span>
+								<span class="sright">
+									<h3><a href="#">I am</a> : 好好玩(´இ皿இ｀)好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好</h3>
+									<h4>7月23号 14:55<em class="em_comments"></em></h4>
+								</span>
+								<div class="d_clear"></div>
+							</li>
+							<li class="li_commu_yuan">
+								<span class="sleft"><a href="#"><img src="images/face/face_Iam.png"></a></span>
+								<span class="sright">
+									<h3><a href="#">I am</a> : 或者这样呢？</h3>
+									<h4>7月23号 14:55<em class="em_comments"></em></h4>
+								</span>
+								<div class="d_clear"></div>
+							</li>
+							<li class="li_commu_hui">
+								<span class="sleft"><a href="#"><img src="images/face/face_Iam.png"></a></span>
+								<span class="sright">
+									<h3><a href="#">I am</a> : 或者这样呢？</h3>
+									<h4>7月23号 14:55<em class="em_comments"></em></h4>
+								</span>
+								<div class="d_clear"></div>
+							</li>
+							<li class="li_commu_hui">
+								<span class="sleft"><a href="#"><img src="images/face/face_Iam.png"></a></span>
+								<span class="sright">
+									<h3><a href="#">I am</a> : 或者这样呢？</h3>
+									<h4>7月23号 14:55<em class="em_comments"></em></h4>
+								</span>
+								<div class="d_clear"></div>
+							</li>
+							<?php } ?>
 						</ul>
 						<div class="cont_say">
 							<form name="" method="post" action="">
@@ -135,7 +220,9 @@
 				<?php } ?>
 			</div>
 		</div>
-		<div id="cont_right"></div>
+		<div id="cont_right">
+			广告位招租
+		</div>
 		<div class="d_clear"></div>
 	</div>
 </div>

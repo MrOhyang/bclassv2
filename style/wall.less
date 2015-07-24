@@ -1,0 +1,41 @@
+/* Public */
+@import url(reset.less);
+
+/* Variable */
+@import url(variable.less);
+
+/* Function Class */
+@import url(functioncss.less);
+
+/* Class */
+@import url(publicclass.less);
+
+/* Code */
+*{
+	font-family: "Microsoft YaHei";
+	font-size: 16px;
+}
+body{
+	background-color: @COLOR_BODY;
+}
+
+/* wall_content */
+#wall_content{
+	.center();
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: @WEBWIDTH;
+	background-color: green;
+	ul.wall_col{
+		.float(left);
+		margin-right: 18px;
+		width: 240px;
+		min-height: 20px;
+		background-color: yellow;
+		li{
+			margin-bottom: 20px;
+			min-height: 10px;
+			background-color: #3F4;
+		}
+	}
+}

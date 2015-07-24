@@ -119,6 +119,7 @@ body{
 					}
 				}
 				#d_say_container{
+					display: none;
 					padding: 8px;
 					padding-right: 0;
 					width: 560px;
@@ -181,7 +182,14 @@ body{
 						.cont_main_cont{
 							margin: 10px 0;
 							font-size: 15px;
-							background-color: blue;
+							p{
+								padding: 4px 0;
+								font-size: 14px;
+							}
+							img{
+								max-width: 566px;
+								max-height: 400px;
+							}
 						}
 					}
 					/* 一个 block 动态的 相关操作 */
@@ -202,6 +210,7 @@ body{
 								padding: 4px 10px 4px 32px;
 								font-size: 13px;
 								border: 1px #F2FDFF solid;
+								color: #157C8C;
 								cursor: pointer;
 								em{
 									position: absolute;
@@ -243,6 +252,73 @@ body{
 								background-color: #E0E0E0;
 							}
 						}
+						ul.ul_comments{
+							position: relative;
+							margin-top: 4px;
+							margin-left: 8px;
+							width: 568px;
+							/*background-color: yellow;*/
+							*{
+								font-size: 14px;
+							}
+							li.li_commu_yuan,li.li_commu_hui{
+								position: relative;
+								position: relative;
+								margin-bottom: 2px;
+								min-height: 30px;
+								/*background-color: green;*/
+								span.sleft,span.sright{
+									position: relative;
+								}
+								span.sleft{
+									.float(left);
+									width: 30px;
+									height: 30px;
+									/*background-color: red;*/
+									a{
+										img{
+											width: 30px;
+											height: 30px;
+											border-radius: 2px;
+										}
+									}
+								}
+								span.sright{
+									.float(right);
+									width: 530px;
+									/*background-color: #3F4;*/
+									color: #333;
+									h3{
+										font-size: 13px;
+										a{
+										}
+									}
+									h4{
+										position: relative;
+										font-size: 12px;
+										color: #AAA;
+										/*background-color: yellow;*/
+										em.em_comments{
+											position: relative;
+											display: inline-block;
+											top: 2px;
+											left: 10px;
+											width: 12px;
+											height: 12px;
+											background-image: url("../images/icon/comments_s.png");
+											cursor: pointer;
+											z-index: 500;
+										}
+									}
+								}
+							}
+							li.li_commu_hui{
+								padding-left: 38px;
+								span.sright{
+									width: 530-38px;
+								}
+							}
+						}
 						.cont_say{
 							margin-top: 10px;
 							margin-left: 8px;
@@ -263,9 +339,13 @@ body{
 		}
 		#cont_right{
 			.float(left);
-			width: 210px;
+			padding: 2px;
+			width: 210-1*2-2*2px;
 			min-height: 100px;
-			background-color: blue;
+			font-size: 14px;
+			background-color: #FFF;
+			border: 1px #DDD solid;
+			color: #555;
 		}
 	}
 }

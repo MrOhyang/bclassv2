@@ -137,6 +137,24 @@ a:hover {
   width: 100%;
   background-color: #FFF;
 }
+/* input tag */
+.myinput {
+  padding: 2px 6px;
+  font-size: 14px;
+  border: 1px #D0F0D0 solid;
+}
+.mybutton {
+  padding: 4px 24px;
+  font-size: 14px;
+  background-color: #5ECFD5;
+  border: 1px #47C3D6 solid;
+  border-radius: 2px;
+  color: #FFF;
+  cursor: pointer;
+}
+.mybutton:hover {
+  background-color: #6BDCF2;
+}
 /* Code */
 * {
   font-family: "Microsoft YaHei";
