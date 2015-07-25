@@ -1,0 +1,36 @@
+/* Public */
+@import url(reset.less);
+
+/* Variable */
+@import url(variable.less);
+
+/* Function Class */
+@import url(functioncss.less);
+
+/* Class */
+@import url(publicclass.less);
+
+/* Code */
+*{
+	font-family: "Microsoft YaHei";
+	font-size: 16px;
+}
+body{
+	background-color: @COLOR_BODY;
+}
+
+/* dd_login */
+#dd_login{
+	.center();
+	width: @WEBWIDTH;
+	background-color: yellow;
+	#login{
+		.float(right);
+		margin-top: 60px;
+		margin-bottom: 60px;
+		margin-right: 50px;
+		width: 300px;
+		height: 400px;
+		background-color: #FFF;
+	}
+}

@@ -9,27 +9,28 @@
 <meta http-equiv="cache-control" content="no-cache">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>卓越班——交流社区</title>
-<?php 
+<title>卓越班——新闻公告</title>
+<!-- <?php 
 // $userAgent = strtolower($_SERVER["HTTP_USER_AGENT"]);
 // if( @ereg("msie 7",$userAgent) || @ereg("msie 6",$userAgent) ){
 	
 // }
+?> -->
+<?php 
+
+
+
 ?>
 
 <!-- css -->
 <link rel="stylesheet" type="text/css" href="style/headfoot.css">
-<link rel="stylesheet" type="text/css" href="style/wall.css">
+<link rel="stylesheet" type="text/css" href="style/news.css">
 
 
 <!-- js -->
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
-<!-- ueditor 配置文件 -->
-<!-- <script type="text/javascript" src="ueditor/ueditor.config.js"></script> -->
-<!-- ueditor 编辑器源码文件 -->
-<!-- <script type="text/javascript" src="ueditor/ueditor.all.min.js"></script> -->
 <script type="text/javascript" src="js/myjs.js"></script>
-<script type="text/javascript" src="js/wall.js"></script>
+<script type="text/javascript" src="js/news.js"></script>
 
 
 </head>
@@ -54,25 +55,53 @@
 		<span id="s_nav">
 			<ul id="ul_nav">
 				<li><a href="index.php">首页</a></li>
-				<li><a href="news.php">新闻公告</a></li>
+				<li class="nav_li_active"><a href="news.php">新闻公告</a></li>
 				<li><a href="community.php">交流社区</a></li>
 				<li><a href="#">问卷调查</a></li>
 				<li><a href="#">事件历史</a></li>
-				<li class="nav_li_active"><a href="wall.php">留言墙</a></li>
+				<li><a href="wall.php">留言墙</a></li>
 			</ul>
 		</span>
 	</div>
 </div>
 
 <!-- content -->
-<div id="wall_content">
-	<ul class="wall_col"></ul>
-	<ul class="wall_col"></ul>
-	<ul class="wall_col"></ul>
-	<ul class="wall_col"></ul>
+<div id="news_content">
+	<div id="cont_left">
+		<div class="d_cont_block news_func">
+			<div class="d_cont_block_title">
+				<span class="d_cont_block_num">03<em></em></span>
+				<span class="d_cont_block_name">新闻/公告</span>
+				<span class="d_cont_block_san"></span>
+				<span class="d_cont_block_more"><a href="#">+</a></span>
+			</div>
+			<div class="d_cont_block_body">
+				<ul id="ul_newsfunc" style="display:block;padding-bottom:1px;">
+					<li><a href="#">新闻</a></li>
+					<li><a href="#">公告</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="cont_right">
+		<div id="news_maincont" class="d_cont_block">
+			<div class="d_cont_block_title">
+				<span class="d_cont_block_num">02<em></em></span>
+				<span class="d_cont_block_name">新闻</span>
+				<span class="d_cont_block_san"></span>
+				<span class="d_cont_block_more"><a href="#">+</a></span>
+			</div>
+			<div class="d_cont_block_body">
+				<!-- <ul id="ul_newslist">
+					<?php $i=0;while($i++<10){ ?>
+					<li><a href="#">今天<?php echo $i; ?>卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻<em>[07-22]</em></a></li>
+					<?php } ?>
+				</ul> -->
+			</div>
+		</div>
+	</div>
 	<div class="d_clear"></div>
 </div>
-
 
 <!-- footer -->
 <div id="f_footer">

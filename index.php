@@ -35,7 +35,7 @@
 <div id="d_top">
 	<div id="top">
 		<span><a href="#">注册</a></span>
-		<span><a href="#">登陆</a></span>
+		<span><a href="login.php">登陆</a></span>
 	</div>
 </div>
 

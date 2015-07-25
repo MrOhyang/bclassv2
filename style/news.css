@@ -137,6 +137,24 @@ a:hover {
   width: 100%;
   background-color: #FFF;
 }
+/* input tag */
+.myinput {
+  padding: 2px 6px;
+  font-size: 14px;
+  border: 1px #D0F0D0 solid;
+}
+.mybutton {
+  padding: 4px 24px;
+  font-size: 14px;
+  background-color: #5ECFD5;
+  border: 1px #47C3D6 solid;
+  border-radius: 2px;
+  color: #FFF;
+  cursor: pointer;
+}
+.mybutton:hover {
+  background-color: #6BDCF2;
+}
 .d_cont_block .d_cont_block_title span.d_cont_block_san {
   border-top: 6px #FFF solid;
   border-right: 6px #FFF solid;
@@ -171,14 +189,14 @@ body {
   margin-left: 24px;
   width: 220px;
 }
-#news_content #cont_left #news_func .d_cont_block_title {
+#news_content #cont_left .news_func .d_cont_block_title {
   width: 222px;
 }
-#news_content #cont_left #news_func .d_cont_block_body ul#ul_newsfunc {
+#news_content #cont_left .news_func .d_cont_block_body ul#ul_newsfunc {
   display: none;
   padding-top: 3px;
 }
-#news_content #cont_left #news_func .d_cont_block_body ul#ul_newsfunc li {
+#news_content #cont_left .news_func .d_cont_block_body ul#ul_newsfunc li {
   margin-left: 3px;
   margin-bottom: 3px;
   width: 214px;
@@ -188,20 +206,20 @@ body {
   /*background-color: #DCF2F5;*/
   cursor: pointer;
 }
-#news_content #cont_left #news_func .d_cont_block_body ul#ul_newsfunc li a {
+#news_content #cont_left .news_func .d_cont_block_body ul#ul_newsfunc li a {
   color: #222;
 }
-#news_content #cont_left #news_func .d_cont_block_body ul#ul_newsfunc li:hover {
+#news_content #cont_left .news_func .d_cont_block_body ul#ul_newsfunc li:hover {
   background-color: #DCF2F5;
 }
-#news_content #cont_left #news_func .d_cont_block_body #slide_button {
+#news_content #cont_left .news_func .d_cont_block_body #slide_button {
   position: relative;
   height: 20px;
   border-top: 1px #E8E8E8 solid;
   background-color: #F2FDFF;
   cursor: pointer;
 }
-#news_content #cont_left #news_func .d_cont_block_body #slide_button em {
+#news_content #cont_left .news_func .d_cont_block_body #slide_button em {
   position: absolute;
   top: 8px;
   left: 50%;
@@ -213,7 +231,7 @@ body {
   border-bottom: 6px transparent solid;
   border-left: 6px transparent solid;
 }
-#news_content #cont_left #news_func .d_cont_block_body #slide_button em.active {
+#news_content #cont_left .news_func .d_cont_block_body #slide_button em.active {
   top: 1px;
   border-top: 6px transparent solid;
   border-bottom: 6px #04B1CC solid;

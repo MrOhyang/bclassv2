@@ -35,7 +35,7 @@
 <div id="d_top">
 	<div id="top">
 		<span><a href="#">注册</a></span>
-		<span><a href="#">登陆</a></span>
+		<span><a href="login.php">登陆</a></span>
 	</div>
 </div>
 
@@ -63,7 +63,7 @@
 <!-- content -->
 <div id="news_content">
 	<div id="cont_left">
-		<div id="news_func" class="d_cont_block">
+		<div class="d_cont_block news_func">
 			<div class="d_cont_block_title">
 				<span class="d_cont_block_num">01<em></em></span>
 				<span class="d_cont_block_name">新闻操作列表</span>
@@ -78,6 +78,20 @@
 				<div id="slide_button"><em></em></div>
 			</div>
 		</div>
+		<div class="d_cont_block news_func">
+			<div class="d_cont_block_title">
+				<span class="d_cont_block_num">03<em></em></span>
+				<span class="d_cont_block_name">新闻/公告</span>
+				<span class="d_cont_block_san"></span>
+				<span class="d_cont_block_more"><a href="#">+</a></span>
+			</div>
+			<div class="d_cont_block_body">
+				<ul id="ul_newsfunc" style="display:block;padding-bottom:1px;">
+					<li><a href="#">新闻</a></li>
+					<li><a href="#">公告</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 	<div id="cont_right">
 		<div id="news_maincont" class="d_cont_block">
@@ -90,7 +104,7 @@
 			<div class="d_cont_block_body">
 				<ul id="ul_newslist">
 					<?php $i=0;while($i++<10){ ?>
-					<li><a href="#">今天<?php echo $i; ?>卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻<em>[07-22]</em></a></li>
+					<li><a href="newdetail.php">今天<?php echo $i; ?>卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻<em>[07-22]</em></a></li>
 					<?php } ?>
 				</ul>
 			</div>
