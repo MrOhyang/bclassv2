@@ -23,6 +23,10 @@
 		border-left: 1px #DDD solid;
 	}
 }
+b.bred{
+	font-weight: normal;
+	color: red;
+}
 
 /* Code */
 *{
@@ -64,10 +68,14 @@ body{
 						/*background-color: #DCF2F5;*/
 						cursor: pointer;
 						a{
+							display: block;
 							color: #222;
 						}
 					}
 					li:hover{
+						background-color: #DCF2F5;
+					}
+					li.action{
 						background-color: #DCF2F5;
 					}
 				}
@@ -110,12 +118,14 @@ body{
 					padding: 8px 0;
 					width: 740-14*2px;
 					li{
+						overflow: hidden;
 						height: 26px;
 						line-height: 26px;
 						margin-bottom: 6px;
 						text-indent: 8px;
 						background-color: #F6F6FF;
 						a{
+							display: block;
 							font-size: 15px;
 							color: #333;
 							em{
@@ -133,6 +143,53 @@ body{
 							color: #34F;
 							em{
 								color: #34F;
+							}
+						}
+					}
+				}
+				form#form_addnew{
+					table#table_addnew{
+						padding: 16px 20px;
+						/*background-color: yellow;*/
+						tbody{
+							tr{
+								td{
+									padding: 4px 0;
+									line-height: 28px;
+									vertical-align: top;
+									/*background-color: red;*/
+									input{
+										padding: 4px 6px;
+										height: 22px;
+										line-height: 22px;
+										font-size: 15px;
+										border: 1px #8899BB solid;
+										border-radius: 2px;
+									}
+									#d_cont_container{
+										max-width: 532px;
+										min-height: 300px;
+										line-height: 1em;
+										font-size: 14px;
+										*{
+											font-size: 14px;
+										}
+									}
+									input.in_submit{
+										margin-top: 12px;
+										margin-left: 30px;
+										padding: 0 24px;
+										height: 36px;
+										line-height: 35px;
+										background-color: #17A6BF;
+										border-radius: 4px;
+										color: #FFF;
+										cursor: pointer;
+									}
+									input.in_submit:hover{
+										background-color: #27B6CF;
+									}
+								}
 							}
 						}
 					}

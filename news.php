@@ -6,11 +6,29 @@ if( @ereg("msie 7",$userAgent) || @ereg("msie 6",$userAgent) ){
 
 // 定义个常量，用来授权调用includes里面的文件
 define('IN_TG',true);
+define('WEB_KIND','news');
+
 //引入公共文件
 require dirname(__FILE__).'/includes/common.inc.php'; 	// 转换成硬路径，速度更快 
-require ROOT_PATH.'action/newsController.php';			// 引用news控制器
+require ROOT_PATH.'action/newsController.php';			// 引用 news 控制器
 
-$newsCon->SelTitle();
+// 如果进入 action=add ，判断是否有登陆
+if( count($_GET)==1 && $_GET['action']='add' ){
+	if( !isset($_COOKIE['user_id']) || !isset($_COOKIE['user_name']) || !isset($_COOKIE['user_face']) ){
+		_location("请先登陆！","login.php");
+	}
+}
+
+// 添加一则新闻操作
+if( count(@$_POST)>0 ){
+	if( $_POST['title']!='' && $_POST['cont']!='' ){
+		$newsCon->AddOnenew($_POST);
+	}else{
+		_alert_back("标题和内容不能为空！");
+	}
+}else{
+	// echo "没有POST操作";
+}
 
 ?>
 <!DOCTYPE html>
@@ -34,6 +52,12 @@ $newsCon->SelTitle();
 
 <!-- js -->
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<?php if( @$_GET['action']=='add' ){ ?>
+<!-- ueditor 配置文件 -->
+<script type="text/javascript" src="ueditor/ueditor.config.js"></script>
+<!-- ueditor 编辑器源码文件 -->
+<script type="text/javascript" src="ueditor/ueditor.all.min.js"></script>
+<?php } ?>
 <script type="text/javascript" src="js/myjs.js"></script>
 <script type="text/javascript" src="js/news.js"></script>
 
@@ -41,34 +65,10 @@ $newsCon->SelTitle();
 </head>
 <body>
 
-<!-- top -->
-<div id="d_top">
-	<div id="top">
-		<span><a href="#">注册</a></span>
-		<span><a href="login.php">登陆</a></span>
-	</div>
-</div>
-
-<!-- nav -->
-<div id="d_nav">
-	<div id="nav">
-		<span id="s_logo">
-			<a href="#"><img id="img_logo" src="images/logo.png"></a>
-			<h1>卓越班</h1>
-			<h2>因你而卓越</h2>
-		</span>
-		<span id="s_nav">
-			<ul id="ul_nav">
-				<li><a href="index.php">首页</a></li>
-				<li class="nav_li_active"><a href="news.php">新闻公告</a></li>
-				<li><a href="community.php">交流社区</a></li>
-				<li><a href="#">问卷调查</a></li>
-				<li><a href="#">事件历史</a></li>
-				<li><a href="wall.php">留言墙</a></li>
-			</ul>
-		</span>
-	</div>
-</div>
+<!-- header -->
+<?php
+	require ROOT_PATH.'includes/header.inc.php';
+?>
 
 <!-- content -->
 <div id="news_content">
@@ -81,8 +81,8 @@ $newsCon->SelTitle();
 				<span class="d_cont_block_more"><a href="#">+</a></span>
 			</div>
 			<div class="d_cont_block_body">
-				<ul id="ul_newsfunc">
-					<li><a href="news.php?action=add">添加新闻/公告</a></li>
+				<ul id="ul_newsfunc" <?php if(@$_GET['action']=='add') echo 'style="display:block"'; ?>>
+					<li <?php if(@$_GET['action']=='add'){echo 'class="action"';}; ?> ><a href="news.php?action=add">添加新闻/公告</a></li>
 					<li><a href="#">开启删除修改按钮</a></li>
 				</ul>
 				<div id="slide_button"><em></em></div>
@@ -112,11 +112,52 @@ $newsCon->SelTitle();
 				<span class="d_cont_block_more"><a href="#">+</a></span>
 			</div>
 			<div class="d_cont_block_body">
+				<?php
+				// 如果 $_GET 没有的话就正常输出 news 列表
+				if( count(@$_GET)==0 ){ ?>
+
 				<ul id="ul_newslist">
-					<?php $i=0;while($i++<10){ ?>
-					<li><a href="newdetail.php">今天<?php echo $i; ?>卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻<em>[07-22]</em></a></li>
+					<?php 
+					$newsCon->SelTitle();
+					foreach ($newsCon->arrdate as $value) {	?>
+
+					<li><a href="newdetail.php?id=<?php echo $value['id'] ?>"><?php echo $value['title']; ?><em>[<?php echo $value['date']; ?>]</em></a></li>
 					<?php } ?>
+
 				</ul>
+				<?php }
+				// 新增新闻
+				if( count(@$_GET)==1 && @$_GET['action']=='add' ){
+				?>
+
+				<form id="form_addnew" method="post" action="news.php?action=add">
+					<table id="table_addnew">
+						<tbody>
+							<tr>
+								<td><b class="bred" style="padding-right:4px">*</b></td>
+								<td>新闻/公告 标题 <b class="bred">：</b></td>
+								<td><input type="text" name="title" style="width:520px;"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>作者 <b class="bred">：</b></td>
+								<td><input type="text" name="author" style="width:210px;"></td>
+							</tr>
+							<tr>
+								<td><b class="bred" style="padding-right:4px">*</b></td>
+								<td>内容 <b class="bred">：</b></td>
+								<td><div id="d_cont_container" name="cont"></div></td>
+							</tr>
+							<tr>
+								<td colspan="3">
+									<input class="in_submit" type="submit" value="确认并提交">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+				<?php } ?>
+
 			</div>
 		</div>
 	</div>
@@ -124,32 +165,9 @@ $newsCon->SelTitle();
 </div>
 
 <!-- footer -->
-<div id="f_footer">
-	<div id="footer">
-		<div class="footer_3fen">
-			<h1>关于</h1>
-			<p>关于卓越班</p>
-			<p>版权声明</p>
-			<p>关于隐私</p>
-			<p>加入卓越班</p>
-		</div>
-		<div class="footer_3fen">
-			<h1>联系</h1>
-			<p>在线提问</p>
-			<p>联系我们</p>
-			<p>卓越班微博</p>
-			<p>卓越班微信</p>
-		</div>
-		<div class="footer_3fen">
-			<h1>版权信息</h1>
-			<p>所发布展示“原创作品/文章”版权归原作者所有，任何商业用途均须联系作者。如未经授权用作他处，作者将保留追究侵权者法律责任的权利。</p>
-			<br>
-			<p>Design by ohyang.</p>
-			<p>Copright 2014/7/20 - 2015/7/10</p>
-		</div>
-		<div class="d_clear"></div>
-	</div>
-</div>
+<?php
+	require ROOT_PATH.'includes/footer.inc.php';
+?>
 
 </body>
 </html>

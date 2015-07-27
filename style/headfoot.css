@@ -74,6 +74,29 @@ a:hover {
   font-size: 14px;
   color: #FFF;
 }
+#d_top #top span.span_login a {
+  display: block;
+  padding: 0 6px;
+  height: 30px;
+  line-height: 30px;
+}
+#d_top #top span.span_login a img {
+  display: inline;
+  float: right;
+  margin-top: 2px;
+  margin-right: 10px;
+  width: 26px;
+  height: 26px;
+  border-radius: 2px;
+}
+#d_top #top span.span_login a h3 {
+  display: inline;
+  float: right;
+  font-size: 14px;
+}
+#d_top #top span.span_login a:hover {
+  color: #BCF;
+}
 /* nav */
 #d_nav {
   height: 50px;

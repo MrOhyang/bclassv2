@@ -165,6 +165,10 @@ a:hover {
 .d_cont_block .d_cont_block_body {
   border-left: 1px #DDD solid;
 }
+b.bred {
+  font-weight: normal;
+  color: red;
+}
 /* Code */
 * {
   font-family: "Microsoft YaHei";
@@ -207,9 +211,13 @@ body {
   cursor: pointer;
 }
 #news_content #cont_left .news_func .d_cont_block_body ul#ul_newsfunc li a {
+  display: block;
   color: #222;
 }
 #news_content #cont_left .news_func .d_cont_block_body ul#ul_newsfunc li:hover {
+  background-color: #DCF2F5;
+}
+#news_content #cont_left .news_func .d_cont_block_body ul#ul_newsfunc li.action {
   background-color: #DCF2F5;
 }
 #news_content #cont_left .news_func .d_cont_block_body #slide_button {
@@ -249,6 +257,7 @@ body {
   width: 712px;
 }
 #news_content #cont_right #news_maincont .d_cont_block_body ul#ul_newslist li {
+  overflow: hidden;
   height: 26px;
   line-height: 26px;
   margin-bottom: 6px;
@@ -256,6 +265,7 @@ body {
   background-color: #F6F6FF;
 }
 #news_content #cont_right #news_maincont .d_cont_block_body ul#ul_newslist li a {
+  display: block;
   font-size: 15px;
   color: #333;
 }
@@ -275,6 +285,47 @@ body {
 }
 #news_content #cont_right #news_maincont .d_cont_block_body ul#ul_newslist li:hover a em {
   color: #34F;
+}
+#news_content #cont_right #news_maincont .d_cont_block_body form#form_addnew table#table_addnew {
+  padding: 16px 20px;
+  /*background-color: yellow;*/
+}
+#news_content #cont_right #news_maincont .d_cont_block_body form#form_addnew table#table_addnew tbody tr td {
+  padding: 4px 0;
+  line-height: 28px;
+  vertical-align: top;
+  /*background-color: red;*/
+}
+#news_content #cont_right #news_maincont .d_cont_block_body form#form_addnew table#table_addnew tbody tr td input {
+  padding: 4px 6px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 15px;
+  border: 1px #8899BB solid;
+  border-radius: 2px;
+}
+#news_content #cont_right #news_maincont .d_cont_block_body form#form_addnew table#table_addnew tbody tr td #d_cont_container {
+  max-width: 532px;
+  min-height: 300px;
+  line-height: 1em;
+  font-size: 14px;
+}
+#news_content #cont_right #news_maincont .d_cont_block_body form#form_addnew table#table_addnew tbody tr td #d_cont_container * {
+  font-size: 14px;
+}
+#news_content #cont_right #news_maincont .d_cont_block_body form#form_addnew table#table_addnew tbody tr td input.in_submit {
+  margin-top: 12px;
+  margin-left: 30px;
+  padding: 0 24px;
+  height: 36px;
+  line-height: 35px;
+  background-color: #17A6BF;
+  border-radius: 4px;
+  color: #FFF;
+  cursor: pointer;
+}
+#news_content #cont_right #news_maincont .d_cont_block_body form#form_addnew table#table_addnew tbody tr td input.in_submit:hover {
+  background-color: #27B6CF;
 }
 #news_content #cont_right #news_maincont .d_cont_block_body h1.h1_newsd_title {
   padding: 16px 20px;

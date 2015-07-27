@@ -30,7 +30,7 @@ define('START_TIME',_runtime());
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PWD','');
-define('DB_NAME','fitnessplan');
+define('DB_NAME','bclassv2');
 
 //初始化数据库
 _connect();   //连接MYSQL数据库
