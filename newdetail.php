@@ -92,6 +92,13 @@
 				<span class="d_cont_block_more"><a href="#">+</a></span>
 			</div>
 			<div class="d_cont_block_body">
+				<h1 class="h1_newsd_title">8点1氪：游侠发布电动车，2017年量产；Google Venture 投资 Secret Escapes</h1>
+				<h2 class="h2_newsd_author">author：zuozhe<em>11:04</em></h2>
+				<img src="images/news/3.jpg">
+				<p>LinkedIn 在上周四悄然移除通信录导出功能，而导出备份数据的时间最多需要 72 小时。在 LinkedIn 用户纷纷表示不满之后，LinkedIn 选择了恢复该项功能。</p>
+				<p>LinkedIn 产品经营部的副总裁 Michael Korcuska，在他的博客上就此事道歉，并做出解释，“导出备份数据的时间通常需要花费 1 至 3 天，等待时间过长，导致用户反映激烈，我们决定在有效缩短这个过程之前，恢复通信录导出功能”。</p>
+				<p>同时这也意味着，LinkedIn 一旦在技术上做到可以于数分钟内完成数据备份，就还是会选择移除通信录导出功能。而 Korcuska 也表示，移除该功能的初衷，则是为了更简洁方便的用户体验。</p>
+				<p><img src="images/news/3.jpg"></p>
 				<!-- <ul id="ul_newslist">
 					<?php $i=0;while($i++<10){ ?>
 					<li><a href="#">今天<?php echo $i; ?>卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻今天卓越班有一个重大的新闻<em>[07-22]</em></a></li>
