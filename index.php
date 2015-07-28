@@ -9,7 +9,9 @@ define('IN_TG',true);
 define('WEB_KIND','index');
 
 //引入公共文件
-require dirname(__FILE__).'/includes/common.inc.php'; 	// 转换成硬路径，速度更快 
+require dirname(__FILE__).'/includes/common.inc.php'; 	// 转换成硬路径，速度更快
+require ROOT_PATH.'action/newsController.php';			// 引用 news 控制器
+
 
 ?>
 <!DOCTYPE html>
@@ -84,19 +86,14 @@ require dirname(__FILE__).'/includes/common.inc.php'; 	// 转换成硬路径，�
 					</div>
 					<div id="d_news_list">
 						<ul id="ul_news_list">
-							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
-							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
-							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
-							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
-							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
-							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
-							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
-							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
-							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
-							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
-							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
-							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
-							<li><a href="#"><b>[07-10]</b>如果字符太多的话就会把它裁剪</a></li>
+							<?php
+							// 新闻列表
+							$newsCon->SelTitle(13);
+							foreach ($newsCon->arrdate as $value) { ?>
+
+							<li><a href="newdetail.php?id=<?php echo $value['id'] ?>"><b>[<?php echo $value['date'] ?>]</b><?php echo $value['title'] ?></a></li>
+							<?php } ?>
+
 						</ul>
 					</div>
 					<div class="d_clear"></div>

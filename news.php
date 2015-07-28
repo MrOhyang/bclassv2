@@ -12,20 +12,17 @@ define('WEB_KIND','news');
 require dirname(__FILE__).'/includes/common.inc.php'; 	// 转换成硬路径，速度更快 
 require ROOT_PATH.'action/newsController.php';			// 引用 news 控制器
 
-// 如果进入 action=add ，判断是否有登陆
-if( count($_GET)==1 && $_GET['action']='add' ){
+// 如果进入 action=add||del ，判断是否有登陆
+if( count($_GET)==1 && ($_GET['action']=='add' || $_GET['action']=='del') ){
 	if( !isset($_COOKIE['user_id']) || !isset($_COOKIE['user_name']) || !isset($_COOKIE['user_face']) ){
 		_location("请先登陆！","login.php");
 	}
 }
 
 // 添加一则新闻操作
-if( count(@$_POST)>0 ){
-	if( $_POST['title']!='' && $_POST['cont']!='' ){
-		$newsCon->AddOnenew($_POST);
-	}else{
-		_alert_back("标题和内容不能为空！");
-	}
+if( count(@$_GET)==1 && $_GET['action']=='add' && count(@$_POST)>0 ){
+	// echo "执行ADD news";
+	$newsCon->AddOnenew($_POST);
 }else{
 	// echo "没有POST操作";
 }
@@ -81,9 +78,9 @@ if( count(@$_POST)>0 ){
 				<span class="d_cont_block_more"><a href="#">+</a></span>
 			</div>
 			<div class="d_cont_block_body">
-				<ul id="ul_newsfunc" <?php if(@$_GET['action']=='add') echo 'style="display:block"'; ?>>
+				<ul id="ul_newsfunc" <?php if(@$_GET['action']=='add' || @$_GET['action']=='del') echo 'style="display:block"'; ?>>
 					<li <?php if(@$_GET['action']=='add'){echo 'class="action"';}; ?> ><a href="news.php?action=add">添加新闻/公告</a></li>
-					<li><a href="#">开启删除修改按钮</a></li>
+					<li <?php if(@$_GET['action']=='del'){echo 'class="action"';}; ?> ><a href="news.php?action=del">开启删除按钮</a></li>
 				</ul>
 				<div id="slide_button"><em></em></div>
 			</div>
@@ -130,6 +127,17 @@ if( count(@$_POST)>0 ){
 				if( count(@$_GET)==1 && @$_GET['action']=='add' ){
 				?>
 
+				<div class="div_remind"><p>提醒：在这里面显示最多5条记录作为预览</p></div>
+				<ul id="ul_newslist" style="padding-bottom:20px;border-bottom:1px #DDD solid;">
+					<?php 
+					$newsCon->SelTitle(5);
+					foreach ($newsCon->arrdate as $value) {	?>
+
+					<li><a href="newdetail.php?id=<?php echo $value['id'] ?>"><?php echo $value['title']; ?><em>[<?php echo $value['date']; ?>]</em></a></li>
+					<?php } ?>
+
+				</ul>
+				<div class="div_remind"><p>提醒：在此输入相关信息提交新闻公告</p></div>
 				<form id="form_addnew" method="post" action="news.php?action=add">
 					<table id="table_addnew">
 						<tbody>
@@ -156,6 +164,24 @@ if( count(@$_POST)>0 ){
 						</tbody>
 					</table>
 				</form>
+				<?php }
+				// 开启删除新闻操作
+				if( count(@$_GET)==1 && @$_GET['action']=='del' ){
+				?>
+
+				<div class="div_remind"><p>提醒：以开启 删除 修改 按钮，请谨慎操作！</p></div>
+				<ul id="ul_newslist" style="padding-bottom:20px;border-bottom:1px #DDD solid;">
+					<?php 
+					$newsCon->SelTitle();
+					foreach ($newsCon->arrdate as $value) {	?>
+
+					<li style="width:682px;" newsid="<?php echo $value['id'] ?>">
+						<a href="newdetail.php?id=<?php echo $value['id'] ?>"><?php echo $value['title']; ?><em>[<?php echo $value['date']; ?>]</em></a>
+						<em class="em_cross"></em>
+					</li>
+					<?php } ?>
+
+				</ul>
 				<?php } ?>
 
 			</div>

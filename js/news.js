@@ -37,6 +37,29 @@ $(function(){
 		}
 	});
 
+	// 删除 news 按钮
+	$("ul#ul_newslist").delegate("li em.em_cross","click",function(){
+		var newsid = $(this).parent().attr("newsid");
+		var domobj = $(this).parent();
+		$.ajax({
+			type : 'POST',
+			url : './ajax/delnews.php',
+			data : {
+				newsid : $(this).parent().attr("newsid")
+			},
+			// dataType : 'json',
+			success : function(response, status, xhr){
+				if( response == true ){
+					domobj.fadeOut(300);
+					setTimeout(function(){
+						domobj.remove();
+					},300);
+				}
+			}
+		});
+		// console.log(newsid);
+	});
+
 })
 
 $(function(){

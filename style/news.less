@@ -113,12 +113,25 @@ body{
 		min-height: 100px;
 		#news_maincont{
 			.d_cont_block_body{
+				.div_remind{
+					padding: 12px 0;
+					p{
+						margin: 0 20px;
+						padding: 4px 14px;
+						font-size: 15px;
+						background-color: #FFFBCC;
+						border: 1px #D5D692 solid;
+						border-radius: 4px;
+						color: #7D7A87;
+					}
+				}
 				ul#ul_newslist{
+					position: relative;
 					margin-left: 14px;
 					padding: 8px 0;
 					width: 740-14*2px;
 					li{
-						overflow: hidden;
+						position: relative;
 						height: 26px;
 						line-height: 26px;
 						margin-bottom: 6px;
@@ -134,6 +147,19 @@ body{
 								font-size: 14px;
 								color: #BBB;
 							}
+						}
+						em.em_cross{
+							position: absolute;
+							top: 6px;
+							right: -22px;
+							width: 16px;
+							height: 16px;
+							background-image: url("../images/cross.png");
+							z-index: 5000;
+						}
+						em.em_cross:hover{
+							top: 5px;
+							right: -24px;
 						}
 					}
 					li:hover{
