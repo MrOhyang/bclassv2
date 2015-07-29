@@ -60,7 +60,7 @@ $newsCon->SelOnenew(@$_GET['id']);
 			</div>
 			<div class="d_cont_block_body">
 				<ul id="ul_newsfunc" style="display:block;padding-bottom:1px;">
-					<li><a href="#">新闻</a></li>
+					<li><a href="news.php">新闻</a></li>
 					<li><a href="#">公告</a></li>
 				</ul>
 			</div>
@@ -76,7 +76,13 @@ $newsCon->SelOnenew(@$_GET['id']);
 			</div>
 			<div class="d_cont_block_body">
 				<h1 class="h1_newsd_title"><?php echo $newsCon->arrdate[0]['title']; ?></h1>
-				<h2 class="h2_newsd_author">作者：<?php echo $newsCon->arrdate[0]['author']; ?><em><?php echo $newsCon->arrdate[0]['date']; ?></em></h2>
+				<h2 class="h2_newsd_author">
+					作者：<?php echo $newsCon->arrdate[0]['author']; ?>
+
+					<em class="em_detail_date"><?php echo $newsCon->arrdate[0]['date']; ?></em>
+					<em class="em_detail_from">来源：<?php echo $newsCon->arrdate[0]['newfrom']; ?></em>
+					<em class="em_detail_from">浏览：<?php echo $newsCon->arrdate[0]['viewnum']; ?></em>
+				</h2>
 				<?php echo $newsCon->arrdate[0]['cont']; ?>
 			</div>
 		</div>

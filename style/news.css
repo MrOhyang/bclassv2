@@ -317,7 +317,7 @@ body {
   /*background-color: yellow;*/
 }
 #news_content #cont_right #news_maincont .d_cont_block_body form#form_addnew table#table_addnew tbody tr td {
-  padding: 4px 0;
+  padding: 6px 0;
   line-height: 28px;
   vertical-align: top;
   /*background-color: red;*/
@@ -364,7 +364,11 @@ body {
   font-size: 14px;
   color: #AAA;
 }
-#news_content #cont_right #news_maincont .d_cont_block_body h2.h2_newsd_author em {
+#news_content #cont_right #news_maincont .d_cont_block_body h2.h2_newsd_author em.em_detail_date {
+  padding-left: 20px;
+  font-size: 14px;
+}
+#news_content #cont_right #news_maincont .d_cont_block_body h2.h2_newsd_author em.em_detail_from {
   padding-left: 20px;
   font-size: 14px;
 }

@@ -1,0 +1,128 @@
+/* Public */
+@import url(reset.less);
+
+/* Variable */
+@import url(variable.less);
+
+/* Function Class */
+@import url(functioncss.less);
+
+/* Class */
+@import url(publicclass.less);
+
+/* Code */
+*{
+	font-family: "Microsoft YaHei";
+	font-size: 16px;
+}
+body{
+	background-color: @COLOR_BODY;
+}
+
+/* dd_login */
+#d_reg{
+	margin: 100px auto;
+	padding: 30px;
+	width: 790px;
+	background-color: #FFF;
+	box-shadow: 1px 1px 16px 0px #999;
+	#d_from{
+		.float(left);
+		width: 570px;
+		/*height: 450px;*/
+		/*background-color: yellow;*/
+		form{
+			table{
+				tbody{
+					tr{
+						td{
+							padding: 7px 3px;
+							font-size: 16px;
+							/*background-color: blue;*/
+							input.in_reg_text{
+								padding: 5px 5px;
+								width: 200px;
+								font-size: 15px;
+								border-radius: 2px;
+								border: 1px #999 solid;
+							}
+							em.em_red{
+								font-size: 15px;
+								color: red;
+							}
+							em.em_red2{
+								display: none;
+								font-size: 15px;
+								color: red;
+							}
+							select{
+								padding-left: 8px;
+								height: 32px;
+								line-height: 32px;
+								option{
+								}
+							}
+							textarea{
+								padding: 5px;
+								width: 320px;
+								height: 70px;
+								resize: none;
+							}
+						}
+						td.td1{
+							text-align: right;
+						}
+					}
+					tr.tr_h{
+						td{
+							h1{
+								position: relative;
+								display: block;
+								width: 200px;
+								height: 24+4px;
+								/*background-color: blue;*/
+								border-bottom: 2px #2E9BFF dashed;
+								em.em_h1{
+									position: absolute;
+									display: block;
+									margin: 0;
+									padding: 0;
+									padding-bottom: 4px;
+									height: 24px;
+									width: 116px;
+									text-align: center;
+									font-size: 18px;
+									/*background-color: red;*/
+									border-bottom: 2px #2E9BFF solid;
+									color: #777;
+								}
+							}
+						}
+					}
+					tr#tr_last{
+						td{
+							input{
+								margin-top: 12px;
+								margin-left: 130px;
+								padding: 7px 26px;
+								cursor: pointer;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	#d_word{
+		.float(right);
+		padding-left: 30px;
+		padding-top: 20px;
+		width: 160px;
+		border-left: 1px #D6D6D6 solid;
+		p{
+			line-height: 1.7em;
+			font-size: 15px;
+			color: #666;
+		}
+	}
+}

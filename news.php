@@ -94,7 +94,7 @@ if( count(@$_GET)==1 && $_GET['action']=='add' && count(@$_POST)>0 ){
 			</div>
 			<div class="d_cont_block_body">
 				<ul id="ul_newsfunc" style="display:block;padding-bottom:1px;">
-					<li><a href="#">新闻</a></li>
+					<li><a href="news.php">新闻</a></li>
 					<li><a href="#">公告</a></li>
 				</ul>
 			</div>
@@ -149,7 +149,12 @@ if( count(@$_GET)==1 && $_GET['action']=='add' && count(@$_POST)>0 ){
 							<tr>
 								<td></td>
 								<td>作者 <b class="bred">：</b></td>
-								<td><input type="text" name="author" style="width:210px;"></td>
+								<td><input type="text" name="author" style="width:150px;"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>来源网 <b class="bred">：</b></td>
+								<td><input type="text" name="newfrom" style="width:220px;"></td>
 							</tr>
 							<tr>
 								<td><b class="bred" style="padding-right:4px">*</b></td>

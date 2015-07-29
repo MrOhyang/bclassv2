@@ -163,81 +163,94 @@ a:hover {
 body {
   background-color: #f0efef;
 }
-/* wall_content */
-#wall_content {
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 1020px;
-  /*background-color: green;*/
+/* dd_login */
+#d_reg {
+  margin: 100px auto;
+  padding: 30px;
+  width: 790px;
+  background-color: #FFF;
+  box-shadow: 1px 1px 16px 0px #999;
 }
-#wall_content ul.wall_col {
+#d_reg #d_from {
   display: inline;
   float: left;
-  margin-right: 18px;
-  width: 240px;
-  min-height: 20px;
+  width: 570px;
+  /*height: 450px;*/
   /*background-color: yellow;*/
 }
-#wall_content ul.wall_col li {
-  overflow: hidden;
-  margin-bottom: 20px;
-  background-color: #FFF;
-  box-shadow: 1px 1px 10px 0 #888;
+#d_reg #d_from form table tbody tr td {
+  padding: 7px 3px;
+  font-size: 16px;
+  /*background-color: blue;*/
 }
-#wall_content ul.wall_col li .d_wall_cont p {
-  position: relative;
-  padding-top: 4px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 4px;
+#d_reg #d_from form table tbody tr td input.in_reg_text {
+  padding: 5px 5px;
+  width: 200px;
   font-size: 15px;
-  /*background-color: red;*/
+  border-radius: 2px;
+  border: 1px #999 solid;
 }
-#wall_content ul.wall_col li .d_wall_cont img {
+#d_reg #d_from form table tbody tr td em.em_red {
+  font-size: 15px;
+  color: red;
+}
+#d_reg #d_from form table tbody tr td em.em_red2 {
+  display: none;
+  font-size: 15px;
+  color: red;
+}
+#d_reg #d_from form table tbody tr td select {
+  padding-left: 8px;
+  height: 32px;
+  line-height: 32px;
+}
+#d_reg #d_from form table tbody tr td textarea {
+  padding: 5px;
+  width: 320px;
+  height: 70px;
+  resize: none;
+}
+#d_reg #d_from form table tbody tr td.td1 {
+  text-align: right;
+}
+#d_reg #d_from form table tbody tr.tr_h td h1 {
   position: relative;
-  left: -10px;
-  margin: 0;
-  padding: 0;
-  max-width: 240px;
+  display: block;
+  width: 200px;
+  height: 28px;
+  /*background-color: blue;*/
+  border-bottom: 2px #2E9BFF dashed;
 }
-#wall_content ul.wall_col li .d_wallimg_block {
+#d_reg #d_from form table tbody tr.tr_h td h1 em.em_h1 {
+  position: absolute;
   display: block;
   margin: 0;
-  width: 240px;
-  height: 64px;
-  border-top: 1px #DDD solid;
-}
-#wall_content ul.wall_col li .d_wallimg_block a {
-  display: inline;
-  float: left;
-  margin-top: 14px;
-  margin-left: 14px;
+  padding: 0;
+  padding-bottom: 4px;
+  height: 24px;
+  width: 116px;
+  text-align: center;
+  font-size: 18px;
   /*background-color: red;*/
+  border-bottom: 2px #2E9BFF solid;
+  color: #777;
 }
-#wall_content ul.wall_col li .d_wallimg_block a img.face_img {
-  width: 34px;
-  height: 34px;
+#d_reg #d_from form table tbody tr#tr_last td input {
+  margin-top: 12px;
+  margin-left: 130px;
+  padding: 7px 26px;
+  cursor: pointer;
 }
-#wall_content ul.wall_col li .d_wallimg_block a.dwallimg_name {
-  display: inline;
-  float: left;
-  margin-top: 26px;
-  margin-left: 8px;
-  /*background-color: red;*/
-}
-#wall_content ul.wall_col li .d_wallimg_block a.dwallimg_name h6 {
-  font-size: 14px;
-}
-#wall_content ul.wall_col li .d_wallimg_block a.dwallimg_name:hover {
-  text-decoration: underline;
-}
-#wall_content ul.wall_col li .d_wallimg_block h5 {
+#d_reg #d_word {
   display: inline;
   float: right;
-  margin-top: 26px;
-  margin-right: 14px;
-  font-size: 13px;
-  /*background-color: red;*/
-  color: #999;
+  padding-left: 30px;
+  padding-top: 20px;
+  width: 160px;
+  border-left: 1px #D6D6D6 solid;
+}
+#d_reg #d_word p {
+  line-height: 1.7em;
+  font-size: 15px;
+  color: #666;
 }

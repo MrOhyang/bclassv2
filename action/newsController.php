@@ -1,17 +1,5 @@
 <?php 
 
-/*
-
-class myData{
-	public $_date = "";
-	public $_items = array();
-	function myRever(){
-		$this->_items = array_reverse($this->_items);
-	}
-}
-
-*/
-
 class newsController{
 	public $arrdate = array();
 	function SelTitle($num = null){
@@ -34,7 +22,7 @@ class newsController{
 		}
 	}
 	function SelOnenew($_id){
-		$_rows = _fetch_array("	SELECT author,title,cont,last_date
+		$_rows = _fetch_array("	SELECT author,newfrom,title,cont,viewnum,last_date
 									FROM news
 									WHERE id=$_id
 									");
@@ -48,10 +36,13 @@ class newsController{
 				$date = substr($_rows['last_date'],0,16);
 			}
 			array_push($this->arrdate, array( 'author'=>$_rows['author'],
+											  'newfrom'=>$_rows['newfrom'],
 											  'title'=>$_rows['title'],
 											  'cont'=>$_rows['cont'],
+											  'viewnum'=>$_rows['viewnum']+1,
 											  'date'=>$date
 											  ));
+			_query("UPDATE news SET viewnum='{$this->arrdate[0]['viewnum']}' WHERE id=$_id");
 		}else{
 			_location("没有此新闻","news.php");
 		}
@@ -66,14 +57,18 @@ class newsController{
 				mkdir($dir);
 			}
 			$arrclear = $arrPost;
-			// 如果作者为空 则 作者为 操作者
+			// 如果 作者 为空 则 作者为 操作者
 			if( $arrclear['author'] == '' ){
 				$arrclear['author'] = $_COOKIE['user_name'];
 			}
+			// 如果 来源网 为空 则 值为 原创
+			if( $arrclear['newfrom'] == '' ){
+				$arrclear['newfrom'] = '原创';
+			}
 
 			$arrimgdom = array();	// array( [0]=> array(
-									//			[0]=> <img src=".." title=".." alt="..",
-									//			[1]=> <img src=".." title=".." alt="..",
+									//			[0]=> <img src=".." title=".." alt="..">,
+									//			[1]=> <img src=".." title=".." alt="..">,
 									//			) /> 
 									//		)
 			$arrimgsrc;				// ../bclassv2/images/temp/20150728/1438066491485742.jpg 路径
@@ -91,12 +86,14 @@ class newsController{
 
 			_query("INSERT INTO news(	title,
 										author,
+										newfrom,
 										cont,
 										first_date,
 										last_date
 										)
 					VALUE(	'{$arrclear['title']}',
 							'{$arrclear['author']}',
+							'{$arrclear['newfrom']}',
 							'{$arrclear['cont']}',
 							NOW(),
 							NOW()
@@ -107,6 +104,23 @@ class newsController{
 		}
 	}
 	function DelOnenew($arrPost){
+		// 删除图片操作
+		$_rows = _fetch_array("	SELECT cont
+								FROM news
+								WHERE id='{$arrPost['newsid']}'
+								");
+		$arrimgsrc = array();
+		preg_match_all("/images\/news\/[^\"]+/", $_rows['cont'], $arrimgsrc);
+
+		foreach ($arrimgsrc[0] as $value) {
+			if( is_file('..\/'.$value) ){
+				if( unlink('..\/'.$value) ){
+				}else{
+					// 删除 文件 失败，可能权限不够
+				}
+			}
+		}
+
 		$_result = _query("	DELETE FROM news
 							WHERE id='{$arrPost['newsid']}'
 							");

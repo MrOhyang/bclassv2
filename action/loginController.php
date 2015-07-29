@@ -1,17 +1,5 @@
 <?php 
 
-/*
-
-class myData{
-	public $_date = "";
-	public $_items = array();
-	function myRever(){
-		$this->_items = array_reverse($this->_items);
-	}
-}
-
-*/
-
 class loginController{
 	function Login($arrPost){
 		$arrclear = $arrPost;
@@ -21,6 +9,8 @@ class loginController{
 								WHERE stu_number='{$arrclear['name']}' AND pwd='{$arrclear['pwd']}'
 								");
 		if( !!$_rows ){
+			// UPdate 用户的 last_date
+			_query("UPDATE user SET last_date=NOW() WHERE id='{$_rows['id']}'");
 			setcookie('user_id',$_rows['id'],time()+86400);
 			setcookie('user_name',$_rows['name'],time()+86400);
 			setcookie('user_face',$_rows['face'],time()+86400);

@@ -10,6 +10,9 @@ define('WEB_KIND','wall');
 
 //引入公共文件
 require dirname(__FILE__).'/includes/common.inc.php'; 	// 转换成硬路径，速度更快 
+require ROOT_PATH.'/action/wallController.php'; 	// 转换成硬路径，速度更快 
+
+// $wallCon->SelWall(4);
 
 ?>
 <!DOCTYPE html>
@@ -51,7 +54,25 @@ require dirname(__FILE__).'/includes/common.inc.php'; 	// 转换成硬路径，�
 
 <!-- content -->
 <div id="wall_content">
-	<ul class="wall_col"></ul>
+	<ul class="wall_col">
+		<!-- <?php
+		foreach ($wallCon->arrdate as $value) { ?>
+		
+		<li>
+			<div class="d_wall_cont"><?php echo $value['cont']; ?></div>
+			<div class="d_wallimg_block">
+				<a href="#">
+					<img class="face_img" src="images/face/<?php echo $value['face']; ?>">
+				</a>
+				<a class="dwallimg_name" href="#">
+					<h6><?php echo $value['name']; ?></h6>
+				</a>
+				<h5><?php echo $value['date']; ?></h5>
+			</div>
+		</li>
+		<?php } ?> -->
+
+	</ul>
 	<ul class="wall_col"></ul>
 	<ul class="wall_col"></ul>
 	<ul class="wall_col"></ul>

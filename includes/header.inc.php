@@ -31,7 +31,7 @@ switch (WEB_KIND) {
 	<div id="top">
 		<?php if( !isset($_COOKIE['user_id']) ){ ?>
 
-		<span><a href="#">注册</a></span>
+		<span><a href="reg.php">注册</a></span>
 		<span><a href="login.php">登陆</a></span>
 		<?php }else{ ?>
 
@@ -41,7 +41,7 @@ switch (WEB_KIND) {
 		<span class="span_login">
 			<a href="#">
 				<h3>Iam</h3>
-				<img src="images/face/face_Iam.png">
+				<img src="images/face/<?php echo $_COOKIE['user_face']; ?>">
 			</a>
 		</span>
 		<?php } ?>

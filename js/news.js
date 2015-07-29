@@ -49,6 +49,8 @@ $(function(){
 			},
 			// dataType : 'json',
 			success : function(response, status, xhr){
+				// console.log(response);
+
 				if( response == true ){
 					domobj.fadeOut(300);
 					setTimeout(function(){

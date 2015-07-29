@@ -25,17 +25,73 @@ body{
 	margin-top: 20px;
 	margin-bottom: 20px;
 	width: @WEBWIDTH;
-	background-color: green;
+	/*background-color: green;*/
 	ul.wall_col{
 		.float(left);
 		margin-right: 18px;
 		width: 240px;
 		min-height: 20px;
-		background-color: yellow;
+		/*background-color: yellow;*/
 		li{
+			overflow: hidden;
 			margin-bottom: 20px;
-			min-height: 10px;
-			background-color: #3F4;
+			background-color: #FFF;
+			box-shadow: 1px 1px 10px 0 #888;
+			.d_wall_cont{
+				p{
+					position: relative;
+					padding-top: 4px;
+					padding-left: 10px;
+					padding-right: 10px;
+					padding-bottom: 4px;
+					font-size: 15px;
+					/*background-color: red;*/
+				}
+				img{
+					position: relative;
+					left: -10px;
+					margin: 0;
+					padding: 0;
+					max-width: 240px;
+				}
+			}
+			.d_wallimg_block{
+				display: block;
+				margin: 0;
+				width: 240px;
+				height: 64px;
+				border-top: 1px #DDD solid;
+				a{
+					.float(left);
+					margin-top: 14px;
+					margin-left: 14px;
+					/*background-color: red;*/
+					img.face_img{
+						width: 34px;
+						height: 34px;
+					}
+				}
+				a.dwallimg_name{
+					.float(left);
+					margin-top: 26px;
+					margin-left: 8px;
+					/*background-color: red;*/
+					h6{
+						font-size: 14px;
+					}
+				}
+				a.dwallimg_name:hover{
+					text-decoration: underline;
+				}
+				h5{
+					.float(right);
+					margin-top: 26px;
+					margin-right: 14px;
+					font-size: 13px;
+					/*background-color: red;*/
+					color: #999;
+				}
+			}
 		}
 	}
 }

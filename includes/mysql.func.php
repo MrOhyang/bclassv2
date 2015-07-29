@@ -29,9 +29,13 @@ function _set_names() {
 	}
 }
 
-function _query($_sql) {
+function _query($_sql,$_tf=false) {
 	if (!$_result = mysql_query($_sql)) {
-		exit('SQL执行失败');
+		if( $_tf ){
+			exit('SQL执行失败'.mysql_error());
+		}else{
+			exit('SQL执行失败');
+		}
 	}
 	return $_result;
 }
