@@ -10,11 +10,15 @@ define('WEB_KIND','community');
 
 //引入公共文件
 require dirname(__FILE__).'/includes/common.inc.php'; 	// 转换成硬路径，速度更快 
+require ROOT_PATH.'/action/communityController.php'; 	// 转换成硬路径，速度更快 
 
 // 如果进入 action=add||del ，判断是否有登陆
 if( !isset($_COOKIE['user_id']) || !isset($_COOKIE['user_name']) || !isset($_COOKIE['user_face']) ){
 	_location("请先登陆！","login.php");
 }
+
+// $communityCon->SelTalk(10);
+$communityCon->CalTalk($communityCon->SelTalk(10));
 
 ?>
 <!DOCTYPE html>
@@ -58,7 +62,7 @@ if( !isset($_COOKIE['user_id']) || !isset($_COOKIE['user_name']) || !isset($_COO
 <div id="df_community_content">
 	<div id="community_content">
 		<div id="cont_top">
-			<span><img src="images/face/face_Iam.png"></span>
+			<span><img src="images/face/<?php echo $_COOKIE['user_face']; ?>"></span>
 			<span></span>
 		</div>
 		<div id="cont_left">
@@ -94,43 +98,57 @@ if( !isset($_COOKIE['user_id']) || !isset($_COOKIE['user_name']) || !isset($_COO
 					<span class="d_cont_block_san"></span>
 					<span class="d_cont_block_more"><a href="#"></a></span>
 				</div>
-				<!-- 失遇 -->
-				<div class="d_cont_block_body">
+				<?php
+				foreach ($communityCon->arrdata as $value) {	?>
+				
+				<div class="d_cont_block_body"><!-- 动态列表 -->
 					<div class="cont_main">
 						<div class="cont_main_face">
-							<div class="d_cont_faceimg"><a href="#"><img src="images/face/face_shiyu.png"></a></div>
-							<h5><a href="#">矢遇@</a></h5>
-							<h6>14:22 浏览了(108)</h6>
+							<div class="d_cont_faceimg"><a href="#"><img src="images/face/<?php echo $value->info['face']; ?>"></a></div>
+							<h5><a href="#"><?php echo $value->info['name']; ?></a></h5>
+							<h6><?php echo $value->info['first_date']; ?> 浏览了(<?php echo $value->info['viewnum']; ?>)</h6>
 						</div>
-						<div class="cont_main_cont">
-							<p>神器拍出来的效果就是不一样</p>
-							<p><img src="images/topic/3.png"></p>
-						</div>
+						<div class="cont_main_cont"><?php echo $value->info['cont']; ?></div>
 					</div>
 					<div class="cont_func">
 						<ul class="ul_contfunc">
-							<li><em class="em_contfunc_comments"></em>评论(4)</li><b></b>
+							<li><em class="em_contfunc_comments"></em>评论(?)</li><b></b>
 							<li><em class="em_contfunc_forward"></em>转发</li><b></b>
-							<li><em class="em_contfunc_zan"></em>赞(12)</li><b></b>
+							<li><em class="em_contfunc_zan"></em>赞(<?php echo $value->info['zannum']; ?>)</li><b></b>
 							<li><em class="em_contfunc_collection"></em>收藏</li>
 						</ul>
-						<ul class="ul_comments">
+						<ul class="ul_comments"><!-- 评论列表 -->
+							<?php
+							foreach ($value->com as $value2) {
+								if( $value2['type'] == '评论' ){ ?>
+
 							<li class="li_commu_yuan">
-								<span class="sleft"><a href="#"><img src="images/face/face_Iam.png"></a></span>
+								<span class="sleft"><a href="#"><img src="images/face/<?php echo @$value2['face']; ?>"></a></span>
 								<span class="sright">
-									<h3><a href="#">I am</a> : 买买买</h3>
-									<h4>7月23号 14:55<em class="em_comments"></em></h4>
+									<h3><a href="#"><?php echo @$value2['name']; ?></a> : <?php echo $value2['cont']; ?></h3>
+									<h4><?php echo $value2['last_date']; ?><em class="em_comments"></em></h4>
 								</span>
 								<div class="d_clear"></div>
 							</li>
+							<?php 	}else{ ?>
+
 							<li class="li_commu_hui">
-								<span class="sleft"><a href="#"><img src="images/face/face_shiyu.png"></a></span>
+								<span class="sleft"><a href="#"><img src="images/face/<?php echo @$value2['face']; ?>"></a></span>
 								<span class="sright">
-									<h3><a href="#">矢遇@</a> 回复 <a href="#">I am</a> : 其实不用神器也是一样哦~</h3>
-									<h4>7月23号 14:55<em class="em_comments"></em></h4>
+									<h3>
+										<a href="#"><?php echo @$value2['name']; ?></a>
+										回复
+										<a href="#"><?php echo @$value2['for_name']; ?></a>
+										 : <?php echo $value2['cont']; ?>
+
+									</h3>
+									<h4><?php echo $value2['last_date']; ?><em class="em_comments"></em></h4>
 								</span>
 								<div class="d_clear"></div>
 							</li>
+							<?php 	}
+							} ?>
+
 						</ul>
 						<div class="cont_say">
 							<form name="" method="post" action="">
@@ -141,7 +159,9 @@ if( !isset($_COOKIE['user_id']) || !isset($_COOKIE['user_name']) || !isset($_COO
 						</div>
 					</div>
 				</div>
-				<?php $i=0;while($i++<3){ ?>
+				<?php } ?>
+
+				<?php $i=0;while($i++<0){ ?>
 				<!-- 循环显示 动态 block -->
 				<div class="d_cont_block_body">
 					<div class="cont_main">
@@ -208,6 +228,7 @@ if( !isset($_COOKIE['user_id']) || !isset($_COOKIE['user_name']) || !isset($_COO
 					</div>
 				</div>
 				<?php } ?>
+
 			</div>
 		</div>
 		<div id="cont_right">

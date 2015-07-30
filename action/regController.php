@@ -21,7 +21,6 @@ class regController{
 
 		if( !$rows ){
 			// 没有相同的 学号
-			// 没有添加 face 这个字段的值 # Code
 			_query("INSERT INTO user(	stu_number,
 										name,
 										rname,
@@ -53,6 +52,9 @@ class regController{
 							NOW()
 							)
 					",true);
+			if( !file_exists('./images/user/'.$arrclear['stu_number']) ){
+				mkdir('./images/user/'.$arrclear['stu_number']);
+			}
 			_location("注册成功！","login.php");
 		}else{
 			// 重复的 学号

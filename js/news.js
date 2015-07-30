@@ -87,7 +87,8 @@ $(function(){
 								        'pasteplain', //纯文本粘贴模式
 								        'selectall', //全选
 								        'fontfamily', //字体
-								        'fontsize' //字号
+								        'fontsize', //字号
+								        'fullscreen' //全屏
 								    ],
 								    [
 								    	'justifyleft', //居左对齐

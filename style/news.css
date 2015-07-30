@@ -331,13 +331,16 @@ body {
   border-radius: 2px;
 }
 #news_content #cont_right #news_maincont .d_cont_block_body form#form_addnew table#table_addnew tbody tr td #d_cont_container {
-  max-width: 532px;
+  width: 532px;
   min-height: 300px;
   line-height: 1em;
   font-size: 14px;
 }
 #news_content #cont_right #news_maincont .d_cont_block_body form#form_addnew table#table_addnew tbody tr td #d_cont_container * {
   font-size: 14px;
+}
+#news_content #cont_right #news_maincont .d_cont_block_body form#form_addnew table#table_addnew tbody tr td #d_cont_container #ueditor_0 img {
+  max-width: 500px;
 }
 #news_content #cont_right #news_maincont .d_cont_block_body form#form_addnew table#table_addnew tbody tr td input.in_submit {
   margin-top: 12px;

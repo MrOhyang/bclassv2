@@ -18,6 +18,7 @@
 		<div class="footer_3fen">
 			<h1>版权信息</h1>
 			<p>所发布展示“原创作品/文章”版权归原作者所有，任何商业用途均须联系作者。如未经授权用作他处，作者将保留追究侵权者法律责任的权利。</p>
+			<p>Open this web cost <?php echo  round((_runtime() - START_TIME),4)?> s.</p>
 			<br>
 			<p>Design by ohyang.</p>
 			<p>Copright 2014/7/20 - 2015/7/10</p>
