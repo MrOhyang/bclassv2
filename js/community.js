@@ -54,59 +54,62 @@ $(function(){
 	var flag = false;
 	var cli1 = false;
 
+	var ue = UE.getEditor('d_say_container',{
+		toolbars : [
+			[
+				'source', //源代码
+		        'undo', //撤销
+		        'redo', //重做
+		        'bold', //加粗
+		        'indent', //首行缩进
+		        'italic', //斜体
+		        'underline', //下划线
+		        'superscript', //上标
+		        'subscript', //下标
+		        'strikethrough', //删除线
+		        'fontborder', //字符边框
+		        'formatmatch', //格式刷
+		        'pasteplain', //纯文本粘贴模式
+		        'selectall', //全选
+		        'fontfamily', //字体
+		        'fontsize', //字号
+		        '|',
+		        'emotion' //表情
+		    ],
+		    [
+		    	'justifyleft', //居左对齐
+		        'justifyright', //居右对齐
+		        'justifycenter', //居中对齐
+		        'justifyjustify', //两端对齐
+		        'removeformat', //清除格式
+		        'cleardoc', //清空文档
+		        'simpleupload', //单图上传
+		        'insertimage', //多图上传
+		        'link', //超链接
+		        'unlink', //取消链接
+		        'preview', //预览
+		        'horizontal', //分隔线
+		        'forecolor', //字体颜色
+		        'backcolor', //背景色
+		        'insertorderedlist', //有序列表
+		        'insertunorderedlist', //无序列表
+		        'imagenone', //默认
+		        'imageleft', //左浮动
+		        'imageright', //右浮动
+		        'imagecenter', //居中
+		        'lineheight', //行间距
+		        'edittip ', //编辑提示
+			]
+		]
+	});
+
 	$("#d_say .d_cont_block_body").click(function(){
 		cli1 = true;
 		if( !flag ){
 			$(this).children("p#say_p").hide();
-			$(this).children("#d_say_container").show();
-			var ue = UE.getEditor('d_say_container',{
-				toolbars : [
-					[
-						'source', //源代码
-				        'undo', //撤销
-				        'redo', //重做
-				        'bold', //加粗
-				        'indent', //首行缩进
-				        'italic', //斜体
-				        'underline', //下划线
-				        'superscript', //上标
-				        'subscript', //下标
-				        'strikethrough', //删除线
-				        'fontborder', //字符边框
-				        'formatmatch', //格式刷
-				        'pasteplain', //纯文本粘贴模式
-				        'selectall', //全选
-				        'fontfamily', //字体
-				        'fontsize', //字号
-				        '|',
-				        'emotion' //表情
-				    ],
-				    [
-				    	'justifyleft', //居左对齐
-				        'justifyright', //居右对齐
-				        'justifycenter', //居中对齐
-				        'justifyjustify', //两端对齐
-				        'removeformat', //清除格式
-				        'cleardoc', //清空文档
-				        'simpleupload', //单图上传
-				        'insertimage', //多图上传
-				        'link', //超链接
-				        'unlink', //取消链接
-				        'preview', //预览
-				        'horizontal', //分隔线
-				        'forecolor', //字体颜色
-				        'backcolor', //背景色
-				        'insertorderedlist', //有序列表
-				        'insertunorderedlist', //无序列表
-				        'imagenone', //默认
-				        'imageleft', //左浮动
-				        'imageright', //右浮动
-				        'imagecenter', //居中
-				        'lineheight', //行间距
-				        'edittip ', //编辑提示
-					]
-				]
-			});
+			$(this).children("form#form_dsay").show();
+			$(this).children("form#form_dsay").children("#d_say_container").show();
+			
 			flag = true;
 			// console.log("执行显示top发表");
 		}
@@ -115,7 +118,7 @@ $(function(){
 	$(document).click(function(){
 		if( !cli1 && flag ){
 			$("#d_say .d_cont_block_body p#say_p").show();
-			$("#d_say .d_cont_block_body #d_say_container").hide();
+			$("#d_say .d_cont_block_body form").hide();
 			flag = false;
 			console.log("隐藏top发表");
 		}

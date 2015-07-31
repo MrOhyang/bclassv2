@@ -17,7 +17,10 @@ if( !isset($_COOKIE['user_id']) || !isset($_COOKIE['user_name']) || !isset($_COO
 	_location("请先登陆！","login.php");
 }
 
-// $communityCon->SelTalk(10);
+if( count(@$_GET==1) && @$_GET['action']=='addcom' && count(@$_POST)>0 ){
+	$communityCon->AddTalk($_POST);
+}
+
 $communityCon->CalTalk($communityCon->SelTalk(10));
 
 ?>
@@ -88,7 +91,10 @@ $communityCon->CalTalk($communityCon->SelTalk(10));
 				</div>
 				<div class="d_cont_block_body">
 					<p id="say_p">说点什么吧..</p>
-					<div id="d_say_container"></div>
+					<form id="form_dsay" method="post" action="community.php?action=addcom">
+						<div id="d_say_container" name="cont"></div>
+						<input class="mybutton cont_say_button" type="submit" value="发表">
+					</form>
 				</div>
 			</div>
 			<div id="d_commu" class="d_cont_block">

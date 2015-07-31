@@ -8,6 +8,7 @@ class talkDC{
 	}
 }
 
+// 在数组中查找是否 有 $num 的值，如果有 返回true
 function FindArrId($arr,$num){
 	foreach ($arr as $value) {
 		if( $value == $num ){
@@ -157,6 +158,53 @@ class communityController{
 			array_push($this->arrdata, $temp);
 		}
 		return $this->arrdata;
+	}
+	// 添加 说说
+	function AddTalk($arrPost){
+		if( $arrPost['cont'] != '' ){
+
+			$arrclear = $arrPost;
+
+			$arrimgdom = array();	// array( [0]=> array(
+									//			[0]=> <img src=".." title=".." alt="..">,
+									//			[1]=> <img src=".." title=".." alt="..">,
+									//			) /> 
+									//		)
+			$arrimgsrc;				// ../bclassv2/images/temp/20150728/1438066491485742.jpg 路径
+			$arrimg;				// 1438066491485742.jpg 文件名
+			$dir = './images/user/'.$_COOKIE['stu_number'];
+
+			preg_match_all("/<img[^>]+\>/", $arrclear['cont'], $arrimgdom);
+
+			foreach ($arrimgdom[0] as $value) {
+				$temp = array();
+				preg_match("/..\/bclassv2\/images\/temp\/[^\"]+/", $value, $temp);
+				$arrimgsrc = $temp[0];	// ../bclassv2/images/temp/20150728/1438066491485742.jpg 路径
+				$arrimg = substr($arrimgsrc,33);	// 1438066491485742.jpg 文件名
+				rename( '.'.substr($arrimgsrc,11) , $dir.'/'.$arrimg );
+				$arrclear['cont'] = str_replace($arrimgsrc, $dir.'/'.$arrimg, $arrclear['cont']);
+			}
+
+			$arrclear['user_id'] = $_COOKIE['user_id'];
+			$arrclear['type'] = '原创';
+
+			_query("INSERT INTO talks(	user_id,
+										type,
+										cont,
+										first_date,
+										last_date
+										)
+					VALUES(	'{$arrclear['user_id']}',
+							'{$arrclear['type']}',
+							'{$arrclear['cont']}',
+							NOW(),
+							NOW()
+							)
+					");
+			_location("发表成功！","community.php");
+		}else{
+			// cont 不能为空
+		}
 	}
 }
 

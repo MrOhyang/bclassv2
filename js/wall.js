@@ -23,7 +23,7 @@ $(function(){
 		},
 		dataType : 'json',
 		success : function(response, status, xhr){
-			console.log(response);
+			// console.log(response);
 			for(var i in response){
 				var strdom = 	'<li id="wallid_'+response[i]['wall_id']+'">'+
 									'<div class="d_wall_cont">'+response[i]['cont']+'</div>'+
@@ -37,8 +37,8 @@ $(function(){
 										'<h5>'+response[i]['date']+'</h5>'+
 									'</div>'+
 								'</li>';
-				console.log(strdom);
-				console.log("");
+				// console.log(strdom);
+				// console.log("");
 				arrcol[FindMinH()].append(strdom);
 
 				var htemp = $('li#wallid_'+response[i]['wall_id']).css("height");

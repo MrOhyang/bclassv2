@@ -120,7 +120,7 @@ if( count(@$_GET)==1 && $_GET['action']=='add' && count(@$_POST)>0 ){
 
 					<li><a href="newdetail.php?id=<?php echo $value['id'] ?>"><?php echo $value['title']; ?><em>[<?php echo $value['date']; ?>]</em></a></li>
 					<?php } ?>
-
+					
 				</ul>
 				<?php }
 				// 新增新闻

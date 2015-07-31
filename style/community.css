@@ -263,15 +263,22 @@ body {
   font-size: 15px;
   color: #AAA;
 }
-#df_community_content #community_content #cont_middle #d_say #d_say_container {
+#df_community_content #community_content #cont_middle #d_say .d_cont_block_body form#form_dsay {
+  display: none;
+}
+#df_community_content #community_content #cont_middle #d_say .d_cont_block_body form#form_dsay #d_say_container {
   display: none;
   padding: 8px;
   padding-right: 0;
   width: 560px;
   min-height: 200px;
 }
-#df_community_content #community_content #cont_middle #d_say #d_say_container * {
+#df_community_content #community_content #cont_middle #d_say .d_cont_block_body form#form_dsay #d_say_container * {
   font-size: 13px;
+}
+#df_community_content #community_content #cont_middle #d_say .d_cont_block_body form#form_dsay input.cont_say_button {
+  margin-left: 498px;
+  margin-bottom: 10px;
 }
 #df_community_content #community_content #cont_middle #d_commu {
   box-shadow: none;
