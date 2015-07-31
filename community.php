@@ -157,79 +157,10 @@ $communityCon->CalTalk($communityCon->SelTalk(10));
 
 						</ul>
 						<div class="cont_say">
-							<form name="" method="post" action="">
-								<input class="myinput cont_say_cont" type="text">
-								<!-- <input class="mybutton cont_say_submit" type="submit" value="发表"> -->
-								<div class="d_clear"></div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<?php } ?>
-
-				<?php $i=0;while($i++<0){ ?>
-				<!-- 循环显示 动态 block -->
-				<div class="d_cont_block_body">
-					<div class="cont_main">
-						<div class="cont_main_face">
-							<div class="d_cont_faceimg"><a href="#"><img src="images/face/face_Iam.png"></a></div>
-							<h5><a href="#">I am</a></h5>
-							<h6>16:48 浏览了</h6>
-						</div>
-						<div class="cont_main_cont">
-							<p>比如说</p>
-							<p><img src="images/topic/2.png"></p>
-						</div>
-					</div>
-					<div class="cont_func">
-						<ul class="ul_contfunc">
-							<li><em class="em_contfunc_comments"></em>评论</li><b></b>
-							<li><em class="em_contfunc_forward"></em>转发</li><b></b>
-							<li><em class="em_contfunc_zan"></em>赞</li><b></b>
-							<li><em class="em_contfunc_collection"></em>收藏</li>
-						</ul>
-						<ul class="ul_comments">
-							<?php $j=0;while($j++<1){ ?>
-							<li class="li_commu_yuan">
-								<span class="sleft"><a href="#"><img src="images/face/face_Iam.png"></a></span>
-								<span class="sright">
-									<h3><a href="#">I am</a> : 好好玩(´இ皿இ｀)好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好</h3>
-									<h4>7月23号 14:55<em class="em_comments"></em></h4>
-								</span>
-								<div class="d_clear"></div>
-							</li>
-							<li class="li_commu_yuan">
-								<span class="sleft"><a href="#"><img src="images/face/face_Iam.png"></a></span>
-								<span class="sright">
-									<h3><a href="#">I am</a> : 或者这样呢？</h3>
-									<h4>7月23号 14:55<em class="em_comments"></em></h4>
-								</span>
-								<div class="d_clear"></div>
-							</li>
-							<li class="li_commu_hui">
-								<span class="sleft"><a href="#"><img src="images/face/face_Iam.png"></a></span>
-								<span class="sright">
-									<h3><a href="#">I am</a> : 或者这样呢？</h3>
-									<h4>7月23号 14:55<em class="em_comments"></em></h4>
-								</span>
-								<div class="d_clear"></div>
-							</li>
-							<li class="li_commu_hui">
-								<span class="sleft"><a href="#"><img src="images/face/face_Iam.png"></a></span>
-								<span class="sright">
-									<h3><a href="#">I am</a> : 或者这样呢？</h3>
-									<h4>7月23号 14:55<em class="em_comments"></em></h4>
-								</span>
-								<div class="d_clear"></div>
-							</li>
-							<?php } ?>
-						</ul>
-						<div class="cont_say">
-							<form name="" method="post" action="">
-								<input class="myinput cont_say_cont" type="text">
-								<!-- <input class="mybutton cont_say_submit" type="submit" value="发表"> -->
-								<div class="d_clear"></div>
-							</form>
+							<input class="myinput cont_say_cont" type="text">
+							<!-- <input class="mybutton cont_say_submit" type="button" value="发表"> -->
+							<input type="hidden" talkid="<?php echo $value->info['id']; ?>">
+							<div class="d_clear"></div>
 						</div>
 					</div>
 				</div>

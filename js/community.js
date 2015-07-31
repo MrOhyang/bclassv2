@@ -14,7 +14,7 @@ $(function(){
 	
 });
 
-// 每个 block 的 input 点击事件
+// 每个 block 的 input (我也说一句) 点击事件
 $(function(){
 
 	var cli1 = false;
@@ -28,14 +28,14 @@ $(function(){
 	// input 我也说一句 click bulr 事件
 	$("#d_commu").delegate("input.myinput","click",function(){
 		cli1 = true;
-		num = $(this).parent().parent().parent().parent().index();
-		console.log(num);
+		// num = $(this).parent().parent().parent().parent().index();
+		// console.log(num);
 		if( $(this).val() == INPUT_SAY ){
 			$(this).val("");
 		}
 		$(this).css("color","#000");
-		if( $(this).next().attr("type") != "submit" ){
-			$(this).after('<input class="mybutton cont_say_submit" type="submit" value="发表">');
+		if( $(this).next().attr("type") != "button" ){
+			$(this).after('<input class="mybutton cont_say_submit" type="button" value="发表">');
 		}
 	});
 	$("#d_commu").delegate("input.myinput","blur",function(){
@@ -138,3 +138,44 @@ $(function(){
 	// },false);
 
 });
+
+// 评论 说说 的 ajax
+$(function(){
+
+	$(".d_cont_block_body").delegate("input.cont_say_submit","click",function(){
+		
+		var _cont = $(this).prev().val();
+		var _talkid = $(this).next().attr("talkid");
+		var domobj = $(this).parent().prev();
+
+		// 做判断，看是否符合条件
+		if( _cont != '' ){
+			$.ajax({
+				type : 'POST',
+				url : './ajax/addcom.php',
+				data : {
+					talk_id : _talkid,
+					type : '评论',
+					cont : _cont
+				},
+				dataType : 'json',
+				success : function(response, status, xhr){
+					console.log(response);
+					var str = 	'<li class="li_commu_yuan">'+
+									'<span class="sleft"><a href="#"><img src="images/face/'+response.face+'"></a></span>'+
+									'<span class="sright">'+
+										'<h3><a href="#">'+response.name+'</a> : '+_cont+'</h3>'+
+										'<h4>'+response.date+'<em class="em_comments"></em></h4>'+
+									'</span>'+
+									'<div class="d_clear"></div>'+
+								'</li>';
+					domobj.append(str);
+				}
+			});
+		}else{
+			// 条件不符合
+		}		
+
+	});
+
+})

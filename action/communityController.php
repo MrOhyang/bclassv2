@@ -174,7 +174,7 @@ class communityController{
 			$arrimg;				// 1438066491485742.jpg 文件名
 			$dir = './images/user/'.$_COOKIE['stu_number'];
 
-			preg_match_all("/<img[^>]+\>/", $arrclear['cont'], $arrimgdom);
+			preg_match_all("/<img src=\"..\/[^>]+\>/", $arrclear['cont'], $arrimgdom);
 
 			foreach ($arrimgdom[0] as $value) {
 				$temp = array();
@@ -205,6 +205,30 @@ class communityController{
 		}else{
 			// cont 不能为空
 		}
+	}
+	// 添加 评论
+	function AddCom($arrPost){
+		$arrclear = $arrPost;
+		$arrclear['user_id'] = $_COOKIE['user_id'];
+
+		_query("INSERT INTO comments(	talk_id,
+										user_id,
+										type,
+										cont,
+										last_date
+										)
+				VALUES(	'{$arrclear['talk_id']}',
+						'{$_COOKIE['user_id']}',
+						'{$arrclear['type']}',
+						'{$arrclear['cont']}',
+						NOW()
+						)
+				");
+		echo json_encode(array(	'name' => $_COOKIE['user_name'],
+								'face' => $_COOKIE['user_face'],
+								'user_id' => $_COOKIE['user_id'],
+								'date' => date("H:i")
+								));
 	}
 }
 
