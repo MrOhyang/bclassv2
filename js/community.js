@@ -146,6 +146,7 @@ $(function(){
 		
 		var _cont = $(this).prev().val();
 		var _talkid = $(this).next().attr("talkid");
+		var dominput = $(this).prev();
 		var domobj = $(this).parent().prev();
 
 		// 做判断，看是否符合条件
@@ -170,6 +171,7 @@ $(function(){
 									'<div class="d_clear"></div>'+
 								'</li>';
 					domobj.append(str);
+					dominput.val('我也说一句');
 				}
 			});
 		}else{

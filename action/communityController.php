@@ -3,7 +3,7 @@
 class talkDC{
 	public $info = array();
 	public $com = array();
-	function talkDC($arg1){
+	public function talkDC($arg1){
 		$this->info = $arg1;
 	}
 }
@@ -21,7 +21,7 @@ function FindArrId($arr,$num){
 class communityController{
 	public $arrdata = array();
 	// 计算 说说表 返回 block 对象信息输出
-	function CalTalk($arrinfo){
+	public function CalTalk($arrinfo){
 
 		$strtalkid = '(';
 		$arrtalkDC = array();
@@ -52,11 +52,7 @@ class communityController{
 		}
 		sort($arruserid);
 
-		$struserid = '(';
-		foreach ($arruserid as $value) {
-			$struserid .= $value.',';
-		}
-		$struserid = substr($struserid, 0, strlen($struserid)-1).')';
+		$struserid = '('.implode(',', $arruserid).')';
 
 		$_result = _query("	SELECT id,name,face
 							FROM user
@@ -69,15 +65,39 @@ class communityController{
 			$arruseridforface[$_rows['id']] = $_rows['face'];
 		}
 
+		// 为 talkDC[]->com 添加 评论 和 回复
 		foreach ($this->arrdata as $value) {
-			$temp = $value;
-			$temp['name'] = $arruseridforname[$value['user_id']];
-			$temp['face'] = $arruseridforface[$value['user_id']];
-			if( $value['type']=='回复' ){
-				$temp['for_name'] = $arruseridforname[$value['for_user_id']];
+			if( $value['type'] == '评论' ){
+				$temp = $value;
+				$temp['name'] = $arruseridforname[$value['user_id']];
+				$temp['face'] = $arruseridforface[$value['user_id']];
+				array_push( $arrtalkDC[$value['talk_id']]->com, $temp);
 			}
-			array_push( $arrtalkDC[$value['talk_id']]->com, $temp);
 		}
+		foreach ($this->arrdata as $value) {
+			if( $value['type'] == '回复' ){
+				$temp = $value;
+				$temp['name'] = $arruseridforname[$value['user_id']];
+				$temp['face'] = $arruseridforface[$value['user_id']];
+				$temp['for_name'] = $arruseridforname[$value['for_user_id']];
+				$n = 0;
+				foreach ($arrtalkDC[$value['talk_id']]->com as $value2) {
+					if( $value2['type']=='评论' && $value2['id'] > $temp['for_com_id'] ){
+						break;
+					}
+					$n++;
+				}
+				$arrtalkDC[$value['talk_id']]->com = array_merge(	array_slice($arrtalkDC[$value['talk_id']]->com,
+																				0,
+																				$n),
+																	array($temp),
+																	array_slice($arrtalkDC[$value['talk_id']]->com,
+																				$n)
+																	);
+			}
+		}
+
+		// print_r( array_slice($arrtalkDC[1]->com, 0) );
 
 		$this->arrdata = $arrtalkDC;
 
@@ -85,7 +105,7 @@ class communityController{
 		// print_r($arrtalkDC);
 	}
 	// SELECT 说说表
-	function SelTalk($num = null){
+	public function SelTalk($num = null){
 		if( !!$num ){
 			$_result = _query("	SELECT talks.id,
 									   talks.user_id,
@@ -134,11 +154,13 @@ class communityController{
 		return $this->arrdata;
 	}
 	// SELECT 评论表
-	function SelComment($arrtalkid){
-		$_result = _query("	SELECT talk_id,
+	public function SelComment($arrtalkid){
+		$_result = _query("	SELECT id,
+								   talk_id,
 								   user_id,
 								   type,
 								   for_user_id,
+								   for_com_id,
 								   cont,
 								   last_date
 							FROM comments
@@ -148,6 +170,7 @@ class communityController{
 		$this->arrdata = array();
 		while( !!$_rows=mysql_fetch_array($_result,MYSQL_ASSOC) ){
 			$temp = $_rows;
+			// 处理时间
 			if( substr($temp['last_date'], 5, 5) == date("m-d") ){
 				$temp['last_date'] = substr($temp['last_date'], 11,5);
 			}else{
@@ -160,7 +183,7 @@ class communityController{
 		return $this->arrdata;
 	}
 	// 添加 说说
-	function AddTalk($arrPost){
+	public function AddTalk($arrPost){
 		if( $arrPost['cont'] != '' ){
 
 			$arrclear = $arrPost;
@@ -207,7 +230,7 @@ class communityController{
 		}
 	}
 	// 添加 评论
-	function AddCom($arrPost){
+	public function AddCom($arrPost){
 		$arrclear = $arrPost;
 		$arrclear['user_id'] = $_COOKIE['user_id'];
 

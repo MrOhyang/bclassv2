@@ -40,7 +40,7 @@ switch (WEB_KIND) {
 		</span>
 		<span class="span_login">
 			<a href="#">
-				<h3>Iam</h3>
+				<h3><?php echo $_COOKIE['user_name']; ?></h3>
 				<img src="images/face/<?php echo $_COOKIE['user_face']; ?>">
 			</a>
 		</span>
