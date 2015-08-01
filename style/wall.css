@@ -165,11 +165,20 @@ body {
 }
 /* wall_content */
 #wall_content {
+  position: relative;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
   width: 1020px;
-  /*background-color: green;*/
+  background-color: green;
+}
+#wall_content #d_wallsay {
+  position: absolute;
+  display: block;
+  width: 500px;
+  height: 190px;
+  background-color: red;
+  z-index: 100;
 }
 #wall_content ul.wall_col {
   display: inline;
@@ -177,7 +186,7 @@ body {
   margin-right: 18px;
   width: 240px;
   min-height: 20px;
-  /*background-color: yellow;*/
+  background-color: yellow;
 }
 #wall_content ul.wall_col li {
   overflow: hidden;

@@ -9,11 +9,13 @@ $(function(){
 $(function(){
 
 	var arrcol = [];
-	var arrcol_h = [];
+	var arrcol_h = [220,220];
 
 	for( var i=0;i<$("ul.wall_col").length;i++ ){
 		arrcol[i] = $("ul.wall_col").eq(i);
-		arrcol_h[i] = 0;
+		if( i>=2 ){
+			arrcol_h[i] = 0;
+		}
 	}
 
 	$.ajax({

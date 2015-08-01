@@ -54,7 +54,8 @@ require ROOT_PATH.'/action/wallController.php'; 	// 转换成硬路径，速度�
 
 <!-- content -->
 <div id="wall_content">
-	<ul class="wall_col">
+	<div id="d_wallsay"></div>
+	<ul class="wall_col" style="position:relative;top:210px;">
 		<!-- <?php
 		foreach ($wallCon->arrdate as $value) { ?>
 		
@@ -73,10 +74,10 @@ require ROOT_PATH.'/action/wallController.php'; 	// 转换成硬路径，速度�
 		<?php } ?> -->
 
 	</ul>
+	<ul class="wall_col" style="position:relative;top:210px;"></ul>
 	<ul class="wall_col"></ul>
 	<ul class="wall_col"></ul>
-	<ul class="wall_col"></ul>
-	<div class="d_clear"></div>
+	<div class="d_clear" style="height:220px;"></div>
 </div>
 
 

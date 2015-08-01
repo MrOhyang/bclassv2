@@ -21,17 +21,26 @@ body{
 
 /* wall_content */
 #wall_content{
+	position: relative;
 	.center();
 	margin-top: 20px;
 	margin-bottom: 20px;
 	width: @WEBWIDTH;
-	/*background-color: green;*/
+	background-color: green;
+	#d_wallsay{
+		position: absolute;
+		display: block;
+		width: 500px;
+		height: 190px;
+		background-color: red;
+		z-index: 100;
+	}
 	ul.wall_col{
 		.float(left);
 		margin-right: 18px;
 		width: 240px;
 		min-height: 20px;
-		/*background-color: yellow;*/
+		background-color: yellow;
 		li{
 			overflow: hidden;
 			margin-bottom: 20px;

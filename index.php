@@ -115,7 +115,7 @@ require ROOT_PATH.'action/newsController.php';			// 引用 news 控制器
 							<h6>1小时前上传</h6>
 							<h6><b>53</b> 评论 / <b>13</b> 人气</h6>
 							<h1>
-								<a href="#">Iam<img src="images/face/face_Iam.png"></a>
+								<a href="#">Iam<img src="images/face/iam.png"></a>
 							</h1>
 						</li>
 						<li>
@@ -125,7 +125,7 @@ require ROOT_PATH.'action/newsController.php';			// 引用 news 控制器
 							<h6>1小时前上传</h6>
 							<h6><b>53</b> 评论 / <b>13</b> 人气</h6>
 							<h1>
-								<a href="#">Iam<img src="images/face/face_Iam.png"></a>
+								<a href="#">Iam<img src="images/face/iam.png"></a>
 							</h1>
 						</li>
 						<li style="margin-right:0">
@@ -135,7 +135,7 @@ require ROOT_PATH.'action/newsController.php';			// 引用 news 控制器
 							<h6>1小时前上传</h6>
 							<h6><b>53</b> 评论 / <b>13</b> 人气</h6>
 							<h1>
-								<a href="#">Iam<img src="images/face/face_Iam.png"></a>
+								<a href="#">Iam<img src="images/face/iam.png"></a>
 							</h1>
 						</li>
 						<div class="d_clear"></div>
