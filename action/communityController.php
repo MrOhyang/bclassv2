@@ -172,10 +172,19 @@ class communityController{
 			$temp = $_rows;
 			// 处理时间
 			if( substr($temp['last_date'], 5, 5) == date("m-d") ){
+				// 同一天
 				$temp['last_date'] = substr($temp['last_date'], 11,5);
 			}else{
 				if( substr($temp['last_date'], 0, 4) == date("Y") ){
-					$temp['last_date'] = substr($temp['last_date'], 5,11);
+					// 同一年
+
+					if( substr($temp['last_date'], 5, 5) == date("m-d",time()-86400) ){
+						$temp['last_date'] = '昨天 '.substr($temp['last_date'], 11,5);
+					}else{
+						$temp['last_date'] = substr($temp['last_date'], 5,11);
+					}
+				}else{
+					// 不同年
 				}
 			}
 			array_push($this->arrdata, $temp);
@@ -241,7 +250,7 @@ class communityController{
 										last_date
 										)
 				VALUES(	'{$arrclear['talk_id']}',
-						'{$_COOKIE['user_id']}',
+						'{$arrclear['user_id']}',
 						'{$arrclear['type']}',
 						'{$arrclear['cont']}',
 						NOW()
@@ -251,6 +260,33 @@ class communityController{
 								'face' => $_COOKIE['user_face'],
 								'user_id' => $_COOKIE['user_id'],
 								'date' => date("H:i")
+								));
+	}
+	// 添加 回复 评论
+	public function AddForCom($arrPost,$forcomid){
+		$arrclear = $arrPost;
+		$arrclear['user_id'] = $_COOKIE['user_id'];
+
+		// _query("INSERT INTO comments(	talk_id,
+		// 								user_id,
+		// 								type,
+		// 								cont,
+		// 								last_date
+		// 								)
+		// 		VALUES(	'{$arrclear['talk_id']}',
+		// 				'{$arrclear['user_id']}',
+		// 				'{$arrclear['type']}',
+		// 				'{$arrclear['cont']}',
+		// 				'{$arrclear['for_user_id']}',
+		// 				'{$arrclear['for_com_id']}',
+		// 				NOW()
+		// 				)
+		// 		");
+		echo json_encode(array(	'name' => $_COOKIE['user_name'],
+								'face' => $_COOKIE['user_face'],
+								'user_id' => $_COOKIE['user_id'],
+								'date' => date("H:i"),
+								'cont' => $arrclear['cont']
 								));
 	}
 }

@@ -26,7 +26,7 @@ $(function(){
 	$("input.cont_say_cont").css("color","#AAA");
 
 	// input 我也说一句 click bulr 事件
-	$("#d_commu").delegate("input.myinput","click",function(){
+	$("#d_commu").delegate("input.cont_say_cont","click",function(){
 		cli1 = true;
 		// num = $(this).parent().parent().parent().parent().index();
 		// console.log(num);
@@ -38,7 +38,7 @@ $(function(){
 			$(this).after('<input class="mybutton cont_say_submit" type="button" value="发表">');
 		}
 	});
-	$("#d_commu").delegate("input.myinput","blur",function(){
+	$("#d_commu").delegate("input.cont_say_cont","blur",function(){
 		if( $(this).val() == "" ){
 			$(this).val(INPUT_SAY);
 		}
@@ -142,6 +142,7 @@ $(function(){
 // 评论 说说 的 ajax
 $(function(){
 
+	// 评论 说说表 的 submit 操作
 	$(".d_cont_block_body").delegate("input.cont_say_submit","click",function(){
 		
 		var _cont = $(this).prev().val();
@@ -161,7 +162,8 @@ $(function(){
 				},
 				dataType : 'json',
 				success : function(response, status, xhr){
-					console.log(response);
+					// 不完善
+					// console.log(response);
 					var str = 	'<li class="li_commu_yuan">'+
 									'<span class="sleft"><a href="#"><img src="images/face/'+response.face+'"></a></span>'+
 									'<span class="sright">'+
@@ -178,6 +180,84 @@ $(function(){
 			// 条件不符合
 		}		
 
+	});
+
+})
+
+$(function(){
+
+	var liobjbefore = null;
+
+	$(".d_cont_block_body").delegate("em.em_comments","click",function(){
+		var domem = $(this);
+		var comid = -1;
+		var liobj = null;
+		var tempobj = $(this).parent().parent().parent();
+		while( tempobj.index()<(tempobj.parent().children("li").length-1) && tempobj.next().attr("forcomid")!=0 ){
+			tempobj = tempobj.next();
+		}
+		liobj = tempobj;
+		while( tempobj.index()>0 && tempobj.attr("forcomid")!=0 ){
+			tempobj = tempobj.prev();
+		}
+		comid = tempobj.attr("comid");
+
+		// console.log(liobj.attr("comid"),liobj.attr("forcomid"));
+		// console.log('comid = '+comid);
+
+		// $("li.li_com_ajax_input").hide();
+		if( liobjbefore!=null ){
+			liobjbefore.children("li.li_com_ajax_input").hide();
+		}
+
+		if( liobj.children("li.li_com_ajax_input").length>=1 ){
+			liobj.children("li.li_com_ajax_input").show();
+		}else{
+			liobjbefore = liobj;
+			liobj.append(	'<li class="li_com_ajax_input" forcomid="'+comid+'">'+
+								'<input class="myinput comajax_input" type="text" value="">'+
+								'<input class="mybutton comajax_button" type="button" value="回复">'+
+							'</li>');
+			liobj.delegate("input.comajax_button","click",function(){
+				if( $(this).prev().val() != '' ){
+					var _talkid = liobj.parent().parent().parent().attr("talkid");
+					var _foruserid = domem.parent().prev().attr("userid");
+					// console.log(_talkid);
+					$.ajax({
+						type : 'POST',
+						url : 'ajax/addcom.php?forcomid='+comid,
+						data : {
+							talk_id : _talkid,
+							type : '回复',
+							cont : $(this).prev().val(),
+							for_user_id : _foruserid,
+							for_com_id : comid
+						},
+						dataType : 'JSON',
+						success : function(response, status, xhr){
+							// 不完善
+							console.log(response);
+							var str = 	'<li class="li_commu_hui">'+
+											'<span class="sleft"><a href="#"><img src="images/face/'+response.face+'"></a></span>'+
+											'<span class="sright">'+
+												'<h3 userid="'+response.user_id+'">'+
+													'<a href="#">'+response.name+'</a>'+
+													'回复'+
+													'<a href="#">'+domem.parent().prev().children("a").eq(0).text()+'</a>'+
+													' : '+response.cont+
+												'</h3>'+
+												'<h4>'+response.date+'<em class="em_comments"></em></h4>'+
+											'</span>'+
+											'<div class="d_clear"></div>'+
+										'</li>';
+							liobj.after(str);
+						}
+					});
+				}else{
+					alert("不能为空！");
+				}
+			});
+		}
 	});
 
 })

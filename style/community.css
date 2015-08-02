@@ -424,7 +424,7 @@ body {
 #df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_comments li.li_commu_yuan,
 #df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_comments li.li_commu_hui {
   position: relative;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   min-height: 30px;
   /*background-color: green;*/
 }
@@ -464,7 +464,7 @@ body {
 #df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_comments li.li_commu_hui span.sright h4 {
   position: relative;
   font-size: 12px;
-  color: #AAA;
+  color: #7C888A;
   /*background-color: yellow;*/
 }
 #df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_comments li.li_commu_yuan span.sright h4 em.em_comments,
@@ -485,18 +485,37 @@ body {
 #df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_comments li.li_commu_hui span.sright {
   width: 492px;
 }
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_comments li.li_com_ajax_input {
+  /*background-color: #3F4;*/
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_comments li.li_com_ajax_input input.comajax_input {
+  position: relative;
+  left: 40px;
+  margin-top: 4px;
+  width: 89.4%;
+}
+#df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func ul.ul_comments li.li_com_ajax_input input.comajax_button {
+  position: relative;
+  left: 86.8%;
+  margin-top: 8px;
+  padding: 3px 20px;
+  font-size: 13px;
+}
 #df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func .cont_say {
   margin-top: 10px;
-  margin-left: 8px;
-  width: 568px;
+  padding-top: 10px;
+  /*background-color: red;*/
+  border-top: 1px #DDD solid;
 }
 #df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func .cont_say input.cont_say_cont {
+  margin-left: 8px;
   width: 554px;
 }
 #df_community_content #community_content #cont_middle #d_commu .d_cont_block_body .cont_func .cont_say input.cont_say_submit {
   display: inline;
   float: right;
   margin-top: 8px;
+  margin-right: 8px;
 }
 #df_community_content #community_content #cont_right {
   display: inline;

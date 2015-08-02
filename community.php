@@ -45,10 +45,6 @@ $communityCon->CalTalk($communityCon->SelTalk(10));
 
 <!-- js -->
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
-<!-- ueditor 配置文件 -->
-<script type="text/javascript" src="ueditor/ueditor.config.js"></script>
-<!-- ueditor 编辑器源码文件 -->
-<script type="text/javascript" src="ueditor/ueditor.all.min.js"></script>
 <script type="text/javascript" src="js/myjs.js"></script>
 <script type="text/javascript" src="js/community.js"></script>
 
@@ -107,7 +103,7 @@ $communityCon->CalTalk($communityCon->SelTalk(10));
 				<?php
 				foreach ($communityCon->arrdata as $value) {	?>
 				
-				<div class="d_cont_block_body"><!-- 动态列表 -->
+				<div class="d_cont_block_body" talkid="<?php echo $value->info['id']; ?>"><!-- 动态列表 -->
 					<div class="cont_main">
 						<div class="cont_main_face">
 							<div class="d_cont_faceimg"><a href="#"><img src="images/face/<?php echo $value->info['face']; ?>"></a></div>
@@ -128,20 +124,24 @@ $communityCon->CalTalk($communityCon->SelTalk(10));
 							foreach ($value->com as $value2) {
 								if( $value2['type'] == '评论' ){ ?>
 
-							<li class="li_commu_yuan">
+							<li class="li_commu_yuan" comid="<?php echo $value2['id']; ?>" forcomid="<?php echo $value2['for_com_id']; ?>">
 								<span class="sleft"><a href="#"><img src="images/face/<?php echo @$value2['face']; ?>"></a></span>
 								<span class="sright">
-									<h3><a href="#"><?php echo @$value2['name']; ?></a> : <?php echo $value2['cont']; ?></h3>
+									<h3 userid="<?php echo $value2['user_id']; ?>">
+										<a href="#"><?php echo @$value2['name']; ?></a>
+										 : <?php echo $value2['cont']; ?>
+
+									</h3>
 									<h4><?php echo $value2['last_date']; ?><em class="em_comments"></em></h4>
 								</span>
 								<div class="d_clear"></div>
 							</li>
 							<?php 	}else{ ?>
 
-							<li class="li_commu_hui">
+							<li class="li_commu_hui" comid="<?php echo $value2['id']; ?>" forcomid="<?php echo $value2['for_com_id']; ?>">
 								<span class="sleft"><a href="#"><img src="images/face/<?php echo @$value2['face']; ?>"></a></span>
 								<span class="sright">
-									<h3>
+									<h3 userid="<?php echo $value2['user_id']; ?>">
 										<a href="#"><?php echo @$value2['name']; ?></a>
 										回复
 										<a href="#"><?php echo @$value2['for_name']; ?></a>
@@ -154,6 +154,11 @@ $communityCon->CalTalk($communityCon->SelTalk(10));
 							</li>
 							<?php 	}
 							} ?>
+
+								<!--<li class="li_com_ajax_input">
+									<input class="myinput comajax_input" type="text">
+									<input class="mybutton comajax_button" type="button" value="回复">
+								</li>-->
 
 						</ul>
 						<div class="cont_say">
@@ -179,6 +184,11 @@ $communityCon->CalTalk($communityCon->SelTalk(10));
 <?php
 	require ROOT_PATH.'includes/footer.inc.php';
 ?>
+
+<!-- ueditor 配置文件 -->
+<script type="text/javascript" src="ueditor/ueditor.config.js"></script>
+<!-- ueditor 编辑器源码文件 -->
+<script type="text/javascript" src="ueditor/ueditor.all.min.js"></script>
 
 </body>
 </html>

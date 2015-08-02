@@ -11,6 +11,12 @@ define('IN_TG',true);
 require dirname(__FILE__).'/../includes/common.inc.php'; 	// 转换成硬路径，速度更快 
 require ROOT_PATH.'action/communityController.php';			// 引用 news 控制器
 
-$communityCon->AddCom($_POST);
+if( count(@$_GET)>0 && !!@$_GET['forcomid'] ){
+	// 添加回复评论
+	$communityCon->AddForCom($_POST,$_GET['forcomid']);
+}else{
+	// 添加评论
+	// $communityCon->AddCom($_POST);
+}
 
 ?>

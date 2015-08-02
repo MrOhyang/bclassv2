@@ -49,12 +49,7 @@ if( count(@$_GET)==1 && $_GET['action']=='add' && count(@$_POST)>0 ){
 
 <!-- js -->
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
-<?php if( @$_GET['action']=='add' ){ ?>
-<!-- ueditor 配置文件 -->
-<script type="text/javascript" src="ueditor/ueditor.config.js"></script>
-<!-- ueditor 编辑器源码文件 -->
-<script type="text/javascript" src="ueditor/ueditor.all.min.js"></script>
-<?php } ?>
+
 <script type="text/javascript" src="js/myjs.js"></script>
 <script type="text/javascript" src="js/news.js"></script>
 
@@ -199,6 +194,13 @@ if( count(@$_GET)==1 && $_GET['action']=='add' && count(@$_POST)>0 ){
 <?php
 	require ROOT_PATH.'includes/footer.inc.php';
 ?>
+
+<?php if( @$_GET['action']=='add' ){ ?>
+<!-- ueditor 配置文件 -->
+<script type="text/javascript" src="ueditor/ueditor.config.js"></script>
+<!-- ueditor 编辑器源码文件 -->
+<script type="text/javascript" src="ueditor/ueditor.all.min.js"></script>
+<?php } ?>
 
 </body>
 </html>
