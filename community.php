@@ -10,7 +10,7 @@ define('WEB_KIND','community');
 
 //引入公共文件
 require dirname(__FILE__).'/includes/common.inc.php'; 	// 转换成硬路径，速度更快 
-require ROOT_PATH.'/action/communityController.php'; 	// 转换成硬路径，速度更快 
+require ROOT_PATH.'/action/communityController.php'; 	// 引用 community 控制器
 
 // 如果进入 action=add||del ，判断是否有登陆
 if( !isset($_COOKIE['user_id']) || !isset($_COOKIE['user_name']) || !isset($_COOKIE['user_face']) ){

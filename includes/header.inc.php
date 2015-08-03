@@ -1,6 +1,6 @@
 <?php
 $webkd = array("","","","","","");
-switch (WEB_KIND) {
+switch (@WEB_KIND) {
 	case 'index':
 		$webkd[0] = 'class="nav_li_active"';
 		break;
@@ -39,7 +39,7 @@ switch (WEB_KIND) {
 			<a href="logout.php">登出</a>
 		</span>
 		<span class="span_login">
-			<a href="#">
+			<a href="<?php echo 'zone.php?id='.$_COOKIE['stu_number']; ?>">
 				<h3><?php echo $_COOKIE['user_name']; ?></h3>
 				<img src="images/face/<?php echo $_COOKIE['user_face']; ?>">
 			</a>
