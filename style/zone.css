@@ -163,4 +163,77 @@ a:hover {
 body {
   background-color: #f0efef;
 }
-/* community_content */
+/* dd_zone */
+#dd_zone {
+  background-image: url("../images/background.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: #FFF;
+}
+#dd_zone #d_zone {
+  margin: 0 auto;
+  width: 940px;
+  height: 940px;
+  /*background-color: #3F4;*/
+}
+#dd_zone #d_zone #zone_top {
+  height: 100px;
+}
+#dd_zone #d_zone #zone_top #zone_t_title h1 {
+  padding-top: 22px;
+  font-size: 24px;
+  color: #157C8C;
+}
+#dd_zone #d_zone #zone_top #zone_t_title h2 {
+  padding-top: 4px;
+  font-size: 14px;
+  color: #157C8C;
+}
+#dd_zone #d_zone #zone_top #zone_t_nav {
+  margin-top: 60px;
+  height: 114px;
+  /*background-color: yellow;*/
+}
+#dd_zone #d_zone #zone_top #zone_t_nav img#img_t {
+  display: inline;
+  float: left;
+  padding: 3px;
+  width: 110px;
+  height: 110px;
+  background-color: #FFF;
+  border: 1px #CCC solid;
+}
+#dd_zone #d_zone #zone_top #zone_t_nav h3 {
+  display: inline;
+  float: left;
+  margin-top: 10px;
+  margin-left: 14px;
+  width: 80%;
+  font-size: 20px;
+  font-weight: bold;
+  /*background-color: #F34;*/
+  color: #157C8C;
+}
+#dd_zone #d_zone #zone_top #zone_t_nav ul#ul_zone_nav {
+  display: inline;
+  float: left;
+  margin-top: 46px;
+  margin-left: 30px;
+  width: 80%;
+  height: 28px;
+  /*background-color: #34F;*/
+}
+#dd_zone #d_zone #zone_top #zone_t_nav ul#ul_zone_nav li {
+  display: inline;
+  float: left;
+  margin-right: 6px;
+  padding: 0 12px;
+  height: 28px;
+  /*background-color: #F3F;*/
+}
+#dd_zone #d_zone #zone_top #zone_t_nav ul#ul_zone_nav li a {
+  height: 28px;
+  line-height: 28px;
+  font-size: 15px;
+  color: #333;
+}

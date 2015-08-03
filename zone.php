@@ -50,7 +50,27 @@ if( count(@$_GET)>0 && !!$_GET['id'] ){
 ?>
 
 <!-- content -->
-111
+<div id="dd_zone">
+	<div id="d_zone">
+		<div id="zone_top">
+			<div id="zone_t_title">
+				<h1>名字</h1>
+				<h2>http://localhost/bclassv2/zone.php?id=stu_number</h2>
+			</div>
+			<div id="zone_t_nav">
+				<img id="img_t" src="images/face/<?php echo $_COOKIE['user_face']; ?>">
+				<h3><?php echo $_COOKIE['user_name']; ?></h3>
+				<ul id="ul_zone_nav">
+					<li><a href="#">主页</a></li>
+					<li><a href="#">说说</a></li>
+					<li><a href="#">相册</a></li>
+					<li><a href="#">个人项目</a></li>
+					<li><a href="#">个人资料</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
 
 <!-- footer -->
 <?php
