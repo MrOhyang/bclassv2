@@ -46,6 +46,22 @@ function SetCookie(_key,_value,_spend,_str){
 	document.write("finish.");
 }
 
+/*
+* 读取 Cookie 的 key value
+*
+* author: 欧阳逸滨
+* date: 2015-8-13 19:29:58
+*/
+function GetCookie(_key){
+	var list = document.cookie.split("; ");
+	for( var i in list ){
+		var index = list[i].search(/\=/);
+		if( list[i].substring(0,index) == _key )
+			return list[i].substring(index+1);
+	}
+	return null;
+}
+
 // 检测浏览器是否支持 cookie 功能
 function IsSupportCookie(){
 	if(navigator.cookieEnabled){
@@ -94,7 +110,8 @@ function MySubStr(str,len){
 	for( var i=0;i<len && !!str.charAt(i);i++ ){
 		ch = str.charAt(i);
 		str2 += ch;
-		if( MyStrMatch(ch,"numchar`~!@#$%^&*()-_=+[{]};:\'\"\\|,<.>/?") ){
+		// if( this.MyStrMatch(ch,"numchar`~!@#$%^&*()-_=+[{]};:\'\"\\|,<.>/?") ){
+		if( /[\w\`\~\!\@\#\$\%\&\_\+\-\*\=\:\;\'\"\\\|\/\(\)\[\]\{\}\<\^\>\,\.\?]/.test(ch) ){
 			flag++;
 			if( flag%2==0 ){
 				len++;
